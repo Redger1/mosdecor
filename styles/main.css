@@ -1,0 +1,206 @@
+@font-face {
+    font-family: 'MakLight';
+    src: url('../fonts/MAK.eot');
+    src: url('../fonts/MAK.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/MAK.woff') format('woff'),
+         url('../fonts/MAK.ttf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+@font-face {
+	font-family: 'Mak';
+    src: url('../fonts/MAK-bold.eot');
+    src: url('../fonts/MAK-bold.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/MAK-bold.woff') format('woff'),
+         url('../fonts/MAK-bold.ttf') format('truetype');
+    font-style: normal;
+    font-weight: bold;
+    text-rendering: optimizeLegibility;
+}
+@font-face {
+	font-family: 'Roboto';
+	src: url('../fonts/Roboto/Roboto-Regular.ttf');
+}
+@font-face {
+  font-family: 'RobotoLight';
+  src: url('../fonts/Roboto/Roboto-Light.ttf');
+}
+
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+ul,
+ol {
+  padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul,
+ol {
+  list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Указываем понятную периодичность в потоке данных у article*/
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+:root {
+	--main-font: 'MakLight';
+}
+.wrapper {
+	width: 85%;
+	margin: 0 auto;
+}
+
+.header {
+	background: url('../assets/header_bg.png') 0 0 /100% no-repeat;
+	color: #F2ECE6;
+}
+.wrapper__top-nav {
+  display: flex;
+  justify-content: space-between;
+}
+.header .wrapper {
+  position: relative;
+  padding: 50px 0 0 0;
+  height: 100vh;
+}
+.header__logo {
+  position: absolute;
+	font-family: 'Mak';
+	text-transform: uppercase;
+	font-size: 2rem;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.header__contact {
+	font-family: 'Roboto';
+	font-size: 2rem;
+}
+.header__title {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -40%);
+  font-size: 7.5rem;
+  font-family: var(--main-font);
+  line-height: 1;
+  text-align: center;
+  text-transform: uppercase;
+}
+.header__title button {
+  font-family: 'Roboto';
+  font-size: 1.5rem;
+  background: url('../assets/buttom_bg.png') 0 0 / 100% no-repeat;
+  border: none;
+  padding: 22px 32px;
+  border-radius: 8px;
+}
+
+
+section .wrapper {
+  padding: 120px 0;
+}
+.samples {
+  background: #FFE8D6;
+  position: relative;
+}
+.section__header {
+  display: flex;
+  justify-content: space-between;
+}
+.section__header h1 {
+  font-size: 4rem;
+  font-family: 'Mak';
+  max-width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  line-height: 1;
+}
+.section__header h1 img {
+  margin: 0 20px;
+}
+.section__header p {
+  font-size: 2.625rem;
+  font-family: 'RobotoLight';
+  max-width: 50%;
+  text-align: right;
+}
+.samples__items {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 100px;
+}
+.samples__items img:last-child {
+  margin-top: 110px;
+}
+.samples__list {
+  font-family: var(--main-font);
+  font-size: 4rem;
+  line-height: 1.5;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.samples__list .active {
+  transform: scale(1.2);
+  font-family: 'Mak';
+}
+
+
+.works {
+  background: #FFE8D6;
+}
