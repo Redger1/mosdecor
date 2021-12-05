@@ -29,8 +29,8 @@
 	<section class="samples">
 		<div class="wrapper">
 			<header class="section__header">
-				<h1>Образцы <img src="assets/sample.png" height="64" width="64"> наших покрытий</h1>
-				<p>С другой стороны новая модель организационной деятельности</p>
+				<h1 class="section__header_first">Образцы <img src="assets/sample.png" height="64" width="64"> наших покрытий</h1>
+				<p class="section__header_second">С другой стороны новая модель организационной деятельности</p>
 			</header>
 			<main class="samples__items">
 				<img src="assets/samples1.png" height="900" width="802">
@@ -49,10 +49,98 @@
 	<section class="works">
 		<div class="wrapper">
 			<header class="section__header">
-				<h1>Работы <img src="assets/sample3.png" height="64" width="64"> наших <img src="assets/sample4.png" height="64" width="64"> мастеров</h1>
-				<p>С другой стороны новая модель организационной деятельности</p>
+				<h1 class="section__header_first">Работы <img src="assets/sample3.png" height="64" width="64"> наших <img src="assets/sample4.png" height="64" width="64"> мастеров</h1>
+				<p class="section__header_second">С другой стороны новая модель организационной деятельности</p>
 			</header>
+			<main class="slider">
+				<button class="slider__button slider__button--left">
+					<img src="assets/slider/slider_arrow.svg">
+				</button>
+
+				<div class="slider__track-containter">
+					<ul class="slider__track">
+						<li class="slider__slide current-slide">
+							<img class="slider__image" src="assets/slider/slider1.png">
+						</li>
+						<li class="slider__slide">
+							<img class="slider__image" src="assets/slider/slider2.png">
+						</li>
+						<li class="slider__slide">
+							<img class="slider__image" src="assets/slider/slider1.png">
+						</li>
+					</ul>
+				</div>
+
+				<button class="slider__button slider__button--right">
+					<img src="assets/slider/slider_arrow.svg">
+				</button>
+			</main>
 		</div>
 	</section>
+
+	<section class="calculate">
+		<div class="wrapper">
+			<h1 class="section__header_first">Расчитайте стоимость работ</h1>
+			<p class="section__header_second">С другой стороны новая модель организационной деятельности требуют определения и уточнения модели развития.</p>
+			<img id="calculate__image" src="assets/slider/slider2.png" height="660" width="1357" alt="">
+			<div class="calculate__calculator">
+				<div class="room-type">
+					<p>Тип помещения</p>
+					<div class="form-group">
+						<div class="dropdown">
+							<button class="dropdown__button">Квартира</button>
+							<ul class="dropdown__list">
+								<li class="dropdown__list-item" data-value="kvartira">Квартира</li>
+								<li class="dropdown__list-item" data-value="dom">Дом</li>
+								<li class="dropdown__list-item" data-value="nejiloe_pomechenie">Нежилое помещение</li>
+							</ul>
+							<input type="text" name="select-room-type" class="dropdown__input-hidden">
+						</div>
+					</div>
+				</div>
+				<div class="cover-type">
+					<p>Тип штукатурки</p>
+					<div class="form-group">
+						<div class="dropdown">
+							<button class="dropdown__button">Веницианская</button>
+							<ul class="dropdown__list">
+								<li class="dropdown__list-item" data-value="venecianskaya">Веницианская</li>
+								<li class="dropdown__list-item" data-value="peschanaya">Песчанная</li>
+								<li class="dropdown__list-item" data-value="shelk">Шелковая</li>
+								<li class="dropdown__list-item" data-value="perlamutrovaya">Перламутровая</li>
+							</ul>
+							<input type="text" name="select-room-type" class="dropdown__input-hidden">
+						</div>
+					</div>
+				</div>
+				<div class="wall-setup">
+					<p>Подготовка стен</p>
+					<div class="wall-setup__checkbox">
+						<label for="done" class="radio">
+							<input name="complete" class="radio__input" value="done" type="radio" id="done">
+							<div class="radio__radio"></div>
+							Сделана
+						</label>
+						<label for="walls" class="radio">
+							<input name="complete" class="radio__input" value="notDone" type="radio" id="walls">
+							<div class="radio__radio"></div>
+							Не сделано
+						</label>
+					</div>
+				</div>
+				<div class="work-scope">
+					<p>Объем работ</p>
+				</div>
+				<div class="phone">
+					<p>Ващ номер телефона*</p>
+					<input placeholder="+7 (999)-999-99-99" type="tel">
+				</div>
+				<div class="button">
+					<button class="calculate__button">Расчитать стоимость работ</button>
+				</div>
+			</div>
+		</div>
+	</section>
+	<script src="js/main.js"></script>
 </body>
 </html>
