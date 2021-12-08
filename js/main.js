@@ -66,3 +66,60 @@ document.querySelector('.calculate__button').addEventListener('click', e => {
 })
 // Нужно будет вывести две штуки hiddenInput.value, номер телефона
 // значения чекбокса и ползунка объема работ
+
+// Анимация списка материалов
+const samplesList = document.querySelector('.samples__list').children;
+for (let index = 0; index < samplesList.length; index++) {
+	samplesList[index].addEventListener('mouseover', event => {
+		event.target.classList.add('active');
+	});
+
+	samplesList[index].addEventListener('mouseout', event => {
+		event.target.classList.remove('active');
+	});
+}
+
+
+// Переключение аватарок
+const avatarContainer = document.querySelector('.avatar');
+const descriptions = document.querySelector('.description').children;
+const avatarItem = document.querySelectorAll('.avatar__item');
+for (let i = 0; i < avatarItem.length; i++) {
+	avatarItem[i].addEventListener('click', function(e) {
+
+		displayDescription(e.target)
+
+		e.target.remove();
+
+		const newAvatarItem = document.querySelectorAll('.avatar__item');
+		avatarContainer.insertBefore(e.target, newAvatarItem[0]);
+	})
+}
+
+function displayDescription(target) {
+	const id = target.id;
+	if (id == 'albert') {
+		for (let i = 0; i < descriptions.length; i++) {
+			descriptions[i].classList.remove('selected');
+			if (descriptions[i].classList == 'description__albert') {
+				descriptions[i].classList.add('selected');
+			}
+		}
+	}
+	if (id == 'victor') {
+		for (let i = 0; i < descriptions.length; i++) {
+			descriptions[i].classList.remove('selected');
+			if (descriptions[i].classList == 'description__victor') {
+				descriptions[i].classList.add('selected');
+			}
+		}
+	}
+	if (id == 'eduard') {
+		for (let i = 0; i < descriptions.length; i++) {
+			descriptions[i].classList.remove('selected');
+			if (descriptions[i].classList == 'description__eduard') {
+				descriptions[i].classList.add('selected');
+			}
+		}
+	}
+}

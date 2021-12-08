@@ -37,7 +37,7 @@
 				<img src="assets/samples2.png" height="900" width="663">
 			</main>
 			<ul class="samples__list">
-				<li class="active">01. Веницианские</li>
+				<li>01. Веницианские</li>
 				<li>02. Песчанные</li>
 				<li>03. Шелковые</li>
 				<li>04. Перламутровые</li>
@@ -145,7 +145,7 @@
 	<section class="masters">
 		<div class="wrapper">
 			<header class="section__header">
-				<h1 class="section__header_first masters__header">Мастера <img src="assets/sample2.png" height="64" width="64">декоративной<br>краски и штукатурки</h1>
+				<h1 class="section__header_first masters__header">Мастера <img src="assets/sample2.png" height="64" width="64">декоративной<br>отделки</h1>
 			</header>
 			
 			<div class="masters__body">
@@ -157,14 +157,23 @@
 				</div>
 				<div class="masters__people">
 					<div class="avatar">
-						<img src="assets/avatar1.png" height="184" width="184" alt="">
-						<img src="assets/avatar2.png" height="184" width="184" alt="">
-						<img src="assets/avatar3.png" height="184" width="184" alt="">
-						<img id="avatar--hidden" src="assets/avatar1.png" height="184" width="184" alt="">
+						<img id="victor" class="avatar__item" src="assets/avatar1.png" height="184" width="184" alt="">
+						<img id="albert" class="avatar__item" src="assets/avatar2.png" height="184" width="184" alt="">
+						<img id="eduard" class="avatar__item" src="assets/avatar3.png" height="184" width="184" alt="">
 					</div>
 					<div class="description">
-						<h1>Виктор Степанович</h1>
-						<p>Мне интересно воплощать идеи заказчиков в жизнь, проводить совместную творческую работу и вкладывать частичку себя.</p>
+						<div class="description__victor selected">
+							<h1>Виктор Степанович</h1>
+							<p>Мне интересно воплощать идеи заказчиков в жизнь, проводить совместную творческую работу и вкладывать частичку себя.</p>
+						</div>
+						<div class="description__albert">
+							<h1>Альберт Евгеньевич</h1>
+							<p>В нашей мастерской мы можем создать вам любую фактуру, по вашим фантазиям или фотографии.</p>
+						</div>
+						<div class="description__eduard">
+							<h1>Константин Эдуардович</h1>
+							<p>Очень важно сохранять в себе творческое начало и чтобы оно не притуплялось на большом количестве заказов.</p>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -177,31 +186,45 @@
 				<h1 class="section__header_first">Почему <img src="assets/sample5.png" height="64" width="64"> нас</h1>
 				<h1 class="section__header_first">выбирают</h1>
 			</header>
+
+			<!-- First Row -->
 			<div class="choose-us__reasons">
-				<div class="choose-us__reasons-item">
+				<div class="left-clip">
+					<div class="right-clip"></div>
+				</div>
+
+				<div class="choose-us__reasons-item--left">
 					<p>
 						У нас работают только <span>высоко квалифицированные мастера</span> и на постоянной основе. Только так можно гарантировать качество проводимых работ.
 					</p>
-					
 				</div>
-				<div class="choose-us__reasons-item">
+				<div class="choose-us__reasons-item--right">
 					<p>
 						Максимально точная и подробная смета. <span>Без скрытых расходов и дополнительных платежей</span>. Вы не заплатите ни копейки больше, чем указано в смете.
 					</p>
 				</div>
-				<div class="choose-us__reasons-item">
-					<p>
-						В договоре мы прописываем <span>точные даты начала и окончания работ</span>. Вы можете быть уверены в том, что работа будет выполнена своевременно.
-					</p>
-					
+			</div>
+			<!-- _________ -->
+
+			<!-- Second Row -->
+			<div class="choose-us__reasons">
+				<div class="left-clip">
+					<div class="right-clip"></div>
 				</div>
-				<div class="choose-us__reasons-item">
+
+				<div class="choose-us__reasons-item--left">
 					<p>
-						Заранее <span>оплата</span> происходит только за материал после подписания договора. Оставшаяся стоимость выплачивается <span>после итоговой сдачи объекта</span>.
+						У нас работают только <span>высоко квалифицированные мастера</span> и на постоянной основе. Только так можно гарантировать качество проводимых работ.
 					</p>
-					
+				</div>
+				<div class="choose-us__reasons-item--right">
+					<p>
+						Максимально точная и подробная смета. <span>Без скрытых расходов и дополнительных платежей</span>. Вы не заплатите ни копейки больше, чем указано в смете.
+					</p>
 				</div>
 			</div>
+			<!-- __________ -->
+
 		</div>
 	</section>
 
