@@ -11,7 +11,19 @@
 		<div class="wrapper">
 			<div class="wrapper__top-nav">
 				<div class="header__menu">
-					<span>burger</span>
+					<div class="menu__burger">
+						<span></span>
+					</div>
+					<div class="menu__body">
+						<ul class="menu__list">
+							<li class="menu__item"><a data-goto=".samples" href="#" class="menu__link">Образцы покрытия</a></li>
+							<li class="menu__item"><a data-goto=".works" href="#" class="menu__link">Наши работы в интерьере</a></li>
+							<li class="menu__item"><a data-goto=".calculate" href="#" class="menu__link">Стоимость работ</a></li>
+							<li class="menu__item"><a data-goto=".masters" href="#" class="menu__link">Наши мастера</a></li>
+							<li class="menu__item"><a data-goto=".choose-us" href="#" class="menu__link">Почему нас выбирают</a></li>
+							<li class="menu__item"><a data-goto=".how-we-work" href="#" class="menu__link">Как мы работаем</a></li>
+						</ul>
+					</div>
 				</div>
 				<div class="header__logo">
 					<img src="assets/header_logo.svg">
@@ -50,7 +62,7 @@
 		<div class="wrapper">
 			<header class="section__header">
 				<h1 class="section__header_first">Работы <img src="assets/sample3.png" height="64" width="64"> наших <img src="assets/sample4.png" height="64" width="64"> мастеров</h1>
-				<p class="section__header_second">С другой стороны новая модель организационной деятельности</p>
+				<p class="section__header_second">Наша цель – воплотить <br> ваши мечты в интерьере</p>
 			</header>
 			<main class="slider">
 				<button class="slider__button slider__button--left">
@@ -81,7 +93,7 @@
 	<section class="calculate">
 		<div class="wrapper">
 			<h1 class="section__header_first">Расчитайте стоимость работ</h1>
-			<p class="section__header_second">С другой стороны новая модель организационной деятельности требуют определения и уточнения модели развития.</p>
+			<p class="section__header_second">Учтем ваш выбор, перезвоним и предоставим актуальную стоимость.</p>
 			<img id="calculate__image" src="assets/slider/slider2.png" height="660" width="1357" alt="">
 			<div class="calculate__calculator">
 				<div class="room-type">
@@ -129,7 +141,13 @@
 					</div>
 				</div>
 				<div class="work-scope">
-					<p>Объем работ</p>
+					<div class="work-scope__toddler">
+						<p>Объем работ</p>
+						<p id="toddler-result">0 кв м<sup>2</sup></p>
+					</div>
+					<div class="toddler-container">
+						<input id="toddler" type="range" min="0" max="200" step="50" oninput="toddler()">		
+					</div>
 				</div>
 				<div class="phone">
 					<p>Ващ номер телефона*</p>
@@ -233,7 +251,7 @@
 			<header class="section__header">
 				<h1 class="section__header_first">Как мы работаем</h1>
 			</header>
-			<p class="section__header_second">С другой стороны новая модель организационной деятельности требуют определения и уточнения модели развития.</p>
+			<p class="section__header_second">Основные этапы работ</p>
 			<div class="how-we-work__items">
 				<div class="how-we-work__items__header">
 					01. Перезваниваем по заявке
@@ -244,7 +262,7 @@
 			</div>
 			<div class="how-we-work__items">
 				<div class="how-we-work__items__header">
-					02.  Выезжаем на объект
+					02. Выезжаем на объект
 				</div>
 				<div class="how-we-work__items__paragraph">
 					Измерение точных размеров объекта, расчёт площади оштукатуривания, необходимого количество сырья, итоговой стоимости работ.
@@ -268,15 +286,7 @@
 			</div>
 			<div class="how-we-work__items">
 				<div class="how-we-work__items__header">
-					05. Поэтапная оплата
-				</div>
-				<div class="how-we-work__items__paragraph">
-					С другой стороны новая модель организационной деятельности требуют определения и уточнения
-				</div>
-			</div>
-			<div class="how-we-work__items">
-				<div class="how-we-work__items__header">
-					06. Сдача объекта
+					05. Сдача объекта
 				</div>
 				<div class="how-we-work__items__paragraph">
 					Прием и утверждение финальной работы мастера. Уборка помещения.
@@ -289,9 +299,9 @@
 		<div class="wrapper">
 			<h1>"master dec"</h1>
 			<div class="footer__socials">
-				<img src="assets/footer/inst.svg" alt="">
-				<img src="assets/footer/youtube.svg" alt="">
-				<img src="assets/footer/vk.svg" alt="">
+				<a class="social-links" href="#"><img src="assets/footer/inst.svg" alt=""></a>
+				<a class="social-links" href="#"><img src="assets/footer/youtube.svg" alt=""></a>
+				<a class="social-links" href="#"><img src="assets/footer/vk.svg" alt=""></a>
 			</div>
 			<div class="footer__contacts">
 				<div class="footer__contacts__items">

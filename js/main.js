@@ -4,20 +4,20 @@ const nextButton = document.querySelector('.slider__button--right');
 const prevButton = document.querySelector('.slider__button--left');
 const slideWidth = slides[0].getBoundingClientRect().width;
 
-// arrange the slides
+// Arrange the slides
 const setSlidePosition = (slide, index) => {
 	slide.style.left = (slideWidth + 30) * index + 'px';
 }
 slides.forEach(setSlidePosition);
 
-// function to move slides
+// Function to move slides
 const moveToSlide = (track, currentSlide, targetSlide) => {
 	track.style.transform = 'translateX(-' + targetSlide.style.left + ')';
 	currentSlide.classList.remove('current-slide');
 	targetSlide.classList.add('current-slide');
 }
 
-// move to the left
+// Move to the left
 prevButton.addEventListener('click', e => {
 	const currentSlide = document.querySelector('.current-slide');
 	const prevSlide = currentSlide.previousElementSibling;
@@ -25,7 +25,7 @@ prevButton.addEventListener('click', e => {
 	moveToSlide(track, currentSlide, prevSlide);
 })
 
-// move to the right
+// Move to the right
 nextButton.addEventListener('click', e => {
 	const currentSlide = document.querySelector('.current-slide');
 	const nextSlide = currentSlide.nextElementSibling;
@@ -120,6 +120,56 @@ function displayDescription(target) {
 			if (descriptions[i].classList == 'description__eduard') {
 				descriptions[i].classList.add('selected');
 			}
+		}
+	}
+}
+
+
+// Calculate toddler
+function toddler() {
+	var rng = document.getElementById('toddler');
+	var p = document.getElementById('toddler-result');
+	p.innerHTML = `${rng.value} кв м<sup>2</sup>`;
+	if (rng.value == '200') { p.innerHTML = `${rng.value}+ кв м<sup>2</sup>` }
+}
+
+
+// Burger menu
+const iconMenu = document.querySelector('.menu__burger');
+const menuBody = document.querySelector('.menu__body');
+if (iconMenu) {
+	iconMenu.addEventListener('click', () => {
+		document.body.classList.toggle('_lock');
+		iconMenu.classList.toggle('_active');
+		menuBody.classList.toggle('_active');
+	})
+}
+
+
+// Menu navigation
+const menuLinks = document.querySelectorAll('.menu__link[data-goto]');
+console.log(menuLinks)
+if (menuLinks) {
+	menuLinks.forEach(menuLink => {
+		menuLink.addEventListener('click', onMenuClick);
+	})
+	function onMenuClick(e) {
+		const menuLink = e.target
+		if (menuLink.dataset.goto && document.querySelector(menuLink.dataset.goto)) {
+			const gotoBlock = document.querySelector(menuLink.dataset.goto);
+			const gotoBlockValue = gotoBlock.getBoundingClientRect().top + pageYOffset;
+		
+			if (iconMenu.classList.contains('_active')) {
+				document.body.classList.remove('_lock');
+				iconMenu.classList.remove('_active');
+				menuBody.classList.remove('_active');
+			}
+
+			window.scrollTo({
+				top: gotoBlockValue,
+				behavior: "smooth"
+			});
+			e.preventDefault();
 		}
 	}
 }

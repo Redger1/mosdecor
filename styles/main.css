@@ -65,6 +65,9 @@ body {
   text-rendering: optimizeSpeed;
   line-height: 1.5;
 }
+body._lock {
+  overflow: hidden;
+}
 
 /* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
 ul,
@@ -75,6 +78,11 @@ ol {
 /* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
 a:not([class]) {
   text-decoration-skip-ink: auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 /* Упрощаем работу с изображениями */
@@ -94,6 +102,10 @@ button,
 textarea,
 select {
   font: inherit;
+}
+
+button {
+  cursor: pointer;
 }
 
 :root {
@@ -121,6 +133,92 @@ select {
   padding: 50px 0 0 0;
   height: 100vh;
 }
+
+  /* Burger menu */
+.menu__burger {
+  width: 100px;
+  height: 33px;
+  display: block;
+  cursor: pointer;
+  position: relative;
+  z-index: 7;
+}
+.menu__burger::after,
+.menu__burger::before,
+.menu__burger span {
+  position: absolute;
+  left: 0;
+  height: 10%;
+  width: 100%;
+  background: #F2ECE6;
+  transition: all 0.3s ease;
+  z-index: 6;
+}
+.menu__burger::after,
+.menu__burger::before { content: ""; }
+
+.menu__burger._active::after,
+.menu__burger._active::before,
+.menu__burger._active span {
+  background: black;;
+}
+
+.menu__burger._active span {
+  transform: scale(0);
+}
+.menu__burger._active::before {
+  top: 50%;
+  transform: scale(0.7) rotate(-45deg) translate(0px, -50%);
+}
+.menu__burger._active::after {
+  bottom: 50%;
+  transform: scale(0.7) rotate(45deg) translate(0px, 50%);
+}
+
+.menu__burger span {
+  top: 50%;
+  transform: scale(1) translateY(-50%);
+}
+.menu__burger::before { top: 0; }
+.menu__burger::after { bottom: 0; }
+
+.menu__body {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: #FFE8D6;
+  z-index: 5;
+  overflow: auto;
+  transform: translate(0, -100%);
+  transition: transform 0.3s ease;
+}
+.menu__body._active {
+  transform: translate(0, 0);
+}
+
+.menu__list { z-index: 6; }
+
+.menu__item {
+  color: black;
+  font-family: var(--main-font-bold);
+  font-size: 5rem;
+  text-align: center;
+  text-transform: uppercase;
+  border-bottom: 6px solid #fff;
+  line-height: 1;
+  padding: 50px 0;
+}
+.menu__item:last-child {
+  border: 0;
+}
+.menu__item:hover {
+  text-decoration: underline;
+}
+
+  /* __________ */
+
 
 .header__logo,
 .header__contact {
@@ -340,6 +438,57 @@ section .wrapper {
   font-family: var(--other-fonts-bold);
 }
 
+  /* Toddler */
+.work-scope__toddler {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  max-height: 36px;
+  margin-bottom: 20px;
+}
+
+.work-scope__toddler * {
+  margin-bottom: 0 !important;
+}
+
+.toddler-container {
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+#toddler-result {
+  font-family: var(--other-fonts);
+  font-size: 1.5rem;
+  line-height: 1.5;
+}
+
+#toddler {
+  -webkit-appearance: none;
+  height: 4px;
+  background: #D6D4D2;
+  padding: 0;
+}
+
+#toddler::-webkit-slider-thumb {
+  cursor: pointer;
+  background: url('../assets/toddler_circle.png') 0 0 / 100% no-repeat;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+#toddler::-moz-range-thumb {
+  cursor: pointer;
+  background: url('../assets/toddler_circle.png') 0 0 / 100% no-repeat;
+  height: 40px;
+  width: 40px;
+  border: 0;
+}
+  /* _______ */
 
   /* Dropdowns */
 .dropdown {
@@ -410,11 +559,11 @@ section .wrapper {
 .radio__radio {
   width: 2.5rem;
   height: 2.5rem;
-  border: 2px solid #362620;
+  border: 3px solid #362620;
   border-radius: 50%;
   margin-right: 10px;
   padding: 8px;
-  background: #fff;
+  background: #C2C0BE;
 }
 .radio__radio::after {
   content: "";
@@ -695,6 +844,9 @@ section .wrapper {
   gap: 80px;
 }
 .footer__socials img {
+}
+.social-links {
+  display: flex;
 }
 .footer__contacts {
   display: flex;
