@@ -114,10 +114,34 @@ button {
   --other-fonts: 'RobotoLight';
   --other-fonts-bold: 'Roboto';
 }
+
+/* Repetitive */
 .wrapper {
 	width: 85%;
 	margin: 0 auto;
 }
+
+.section__header {
+  justify-content: space-between;
+}
+
+.section__header h1 {
+  max-width: 50%;
+  flex-wrap: wrap;
+}
+
+.section__header h1 img {
+  margin: 0 20px;
+}
+
+.section__header p {
+  max-width: 50%;
+  text-align: right;
+}
+
+.section__header,
+.section__header h1 { display: flex; }
+/* __________ */
 
 /* Header */
 .header {
@@ -260,63 +284,86 @@ button {
   font-size: 4rem;
   font-family: var(--main-font-bold);
   line-height: 1;
+  z-index: 5;
 }
 .section__header_second {
   font-size: 2.625rem;
   font-family: var(--other-fonts);
+  z-index: 5;
 }
 
 section .wrapper {
   padding: 120px 0;
 }
+
+/*=================== 
+        Samples
+  ===================*/
 .samples {
   background: #FFE8D6;
   position: relative;
 }
 
-.samples__items,
-.section__header,
-.section__header h1 { display: flex; }
-
-.section__header {
-  justify-content: space-between;
-}
-.section__header h1 {
-  max-width: 50%;
-  flex-wrap: wrap;
-}
-.section__header h1 img {
-  margin: 0 20px;
-}
-.section__header p {
-  max-width: 50%;
-  text-align: right;
-}
-.samples__items {
-  justify-content: space-between;
-  padding-top: 100px;
-}
-.samples__items img:last-child {
-  margin-top: 110px;
-}
-.samples__list {
-  font-family: var(--main-font);
-  font-size: 4rem;
-  line-height: 1.5;
+#samples__backgorund-mask {
   position: absolute;
-  top: 60%;
-  left: 65%;
-  transform: translate(-65%, -50%);
-  width: 50%;
-  cursor: default;
-}
-.samples__list .active {
-  transform: scale(1.2);
-  font-family: var(--main-font-bold);
-  cursor: default;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  z-index: 1;
+  display: none;
 }
 
-/* Work Section */
+.samples__body {  
+  padding-top: 222px;
+  z-index: 5;
+}
+
+.samples__body__line {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  z-index: 5;
+  margin-top: 20px;
+}
+.samples__body__line:first-child {
+  margin-top: 0;
+}
+
+.samples__body-item {
+  /*max-width: max-content;*/
+  height: 96px;
+  color: #292C26;
+  font-size: 3.5rem;
+  font-family: var(--main-font);
+  line-height: 1;
+  padding: 20px 48px;
+  border: 2px solid #292C26;
+  border-radius: 100px;
+  background: transparent;
+  cursor: pointer;
+  z-index: 5;
+
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  -moz-backdrop-filter: blur(6px);
+}
+
+.samples__body-item._selected,
+.samples__body-item:hover {
+  background: #292C26;
+  color: #FFE8D6;
+}
+
+.samples__body-item._selected {
+  box-shadow: 0px 10px 10px #292C26;
+}
+/*===================   
+  ===================*/
+
+
+/*===================
+      Work Section
+  ===================*/
 .works {
   background: #FFE8D6;
 }
@@ -365,6 +412,9 @@ section .wrapper {
 .slider__button--left {
   left: -40px;
 }
+/*===================   
+  ===================*/
+
 
 /*=================== 
    Calculate Section

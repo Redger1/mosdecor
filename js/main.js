@@ -1,3 +1,25 @@
+// Samples switcher
+const samplesArray = Array.from(document.querySelectorAll('.samples__body-item'));
+const samplesBgMasks = Array.from(document.querySelectorAll('#samples__backgorund-mask'));
+samplesBgMasks[0].style.display = 'block';
+
+console.log(samplesBgMasks.src);
+samplesArray.forEach((item, index, arr) => {
+	item.addEventListener('click', e => {
+		for (let i = 0; i < samplesArray.length; i++) {
+			samplesArray[i].classList.remove('_selected');
+		}
+		e.target.classList.add('_selected');
+		for (let j = 0; j < samplesBgMasks.length; j++) {
+			samplesBgMasks[j].style.display = 'none';
+			if (e.target.dataset.value == samplesBgMasks[j].dataset.value) {
+				samplesBgMasks[j].style.display = 'block';
+			}
+		}
+	})
+});
+
+// Slider
 const track = document.querySelector('.slider__track');
 const slides = Array.from(track.children);
 const nextButton = document.querySelector('.slider__button--right');
@@ -66,18 +88,6 @@ document.querySelector('.calculate__button').addEventListener('click', e => {
 })
 // Нужно будет вывести две штуки hiddenInput.value, номер телефона
 // значения чекбокса и ползунка объема работ
-
-// Анимация списка материалов
-const samplesList = document.querySelector('.samples__list').children;
-for (let index = 0; index < samplesList.length; index++) {
-	samplesList[index].addEventListener('mouseover', event => {
-		event.target.classList.add('active');
-	});
-
-	samplesList[index].addEventListener('mouseout', event => {
-		event.target.classList.remove('active');
-	});
-}
 
 
 // Переключение аватарок
@@ -148,7 +158,6 @@ if (iconMenu) {
 
 // Menu navigation
 const menuLinks = document.querySelectorAll('.menu__link[data-goto]');
-console.log(menuLinks)
 if (menuLinks) {
 	menuLinks.forEach(menuLink => {
 		menuLink.addEventListener('click', onMenuClick);

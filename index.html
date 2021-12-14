@@ -42,20 +42,38 @@
 		<div class="wrapper">
 			<header class="section__header">
 				<h1 class="section__header_first">Образцы <img src="assets/sample.png" height="64" width="64"> наших покрытий</h1>
-				<p class="section__header_second">С другой стороны новая модель организационной деятельности</p>
+				<p class="section__header_second">Подготовлены нашими мастерами специально для вас</p>
 			</header>
-			<main class="samples__items">
-				<img src="assets/samples1.png" height="900" width="802">
-				<img src="assets/samples2.png" height="900" width="663">
-			</main>
-			<ul class="samples__list">
-				<li>01. Веницианские</li>
-				<li>02. Песчанные</li>
-				<li>03. Шелковые</li>
-				<li>04. Перламутровые</li>
-				<li>05. Бумажные</li>
-				<li>06. Рельефные</li>
-			</ul>
+			<div class="samples__body">
+				<div class="samples__body__line">
+					<button data-value='venecia' class="samples__body-item _selected">Венецианские</button>
+					<button data-value='pesok' class="samples__body-item">Песчанные</button>
+				</div>
+				<div class="samples__body__line">
+					<button data-value='relief' class="samples__body-item">Рельефные</button>
+					<button data-value='perlamut' class="samples__body-item">Пералмутровые</button>
+				</div>
+				<div class="samples__body__line">
+					<button data-value='bumaga' class="samples__body-item">Бумажные</button>
+					<button data-value='microcement' class="samples__body-item">Микроцемент</button>
+				</div>
+				<div class="samples__body__line">
+					<button data-value='shelk' class="samples__body-item">Шёлковые</button>
+					<button data-value='beton' class="samples__body-item">Бетон</button>
+				</div>
+				<div class="samples__body__line">
+					<button data-value='freska' class="samples__body-item">Фреска</button>
+				</div>			
+			</div>
+			<img data-value='venecia' id="samples__backgorund-mask" src="assets/samples/venecia.png" height="976" width="1082">
+			<img data-value='pesok' id="samples__backgorund-mask" src="assets/samples/pesok.png" height="976" width="1082">
+			<img data-value='relief' id="samples__backgorund-mask" src="assets/samples/relief.png" height="976" width="1082">
+			<img data-value='perlamut' id="samples__backgorund-mask" src="assets/samples/perlamut.png" height="976" width="1082">
+			<img data-value='bumaga' id="samples__backgorund-mask" src="assets/samples/bumaga.png" height="976" width="1082">
+			<img data-value='microcement' id="samples__backgorund-mask" src="assets/samples/microcement.png" height="976" width="1082">
+			<img data-value='shelk' id="samples__backgorund-mask" src="assets/samples/shelk.png" height="976" width="1082">
+			<img data-value='beton' id="samples__backgorund-mask" src="assets/samples/beton.png" height="976" width="1082">
+			<img data-value='freska' id="samples__backgorund-mask" src="assets/samples/freska.png" height="976" width="1082">
 		</div>
 	</section>
 	<section class="works">
@@ -95,9 +113,7 @@
 			<h1 class="section__header_first">Расчитайте стоимость работ</h1>
 			<p class="section__header_second">Учтем ваш выбор, перезвоним и предоставим актуальную стоимость.</p>
 			<img id="calculate__image" src="assets/slider/slider2.png" height="660" width="1357" alt="">
-			<div>
-				<form class="calculate__calculator" action="telegram.php" method="POST">
-
+			<div class="calculate__calculator">
 				<div class="room-type">
 					<p>Тип помещения</p>
 					<div class="form-group">
@@ -160,8 +176,6 @@
 				<div class="button">
 					<button type="submit" class="calculate__button">Расчитать стоимость</button>
 				</div>
-
-				</form>
 			</div>
 		</div>
 	</section>
