@@ -41,7 +41,10 @@
 	<section class="samples">
 		<div class="wrapper">
 			<header class="section__header">
-				<h1 class="section__header_first">Образцы <img src="assets/sample.png" height="64" width="64"> наших покрытий</h1>
+				<div class="header__wrapper">
+					<h1 class="section__header_first">Образцы <img src="assets/sample.png" height="64" width="64"> наших</h1>
+					<h1 class="section__header_first">покрытий</h1>
+				</div>
 				<p class="section__header_second">Подготовлены нашими мастерами специально для вас</p>
 			</header>
 			<div class="samples__body">
@@ -63,7 +66,7 @@
 				</div>
 				<div class="samples__body__line">
 					<button data-value='freska' class="samples__body-item">Фреска</button>
-				</div>			
+				</div>
 			</div>
 			<img data-value='venecia' id="samples__backgorund-mask" src="assets/samples/venecia.png" height="976" width="1082">
 			<img data-value='pesok' id="samples__backgorund-mask" src="assets/samples/pesok.png" height="976" width="1082">
@@ -79,7 +82,10 @@
 	<section class="works">
 		<div class="wrapper">
 			<header class="section__header">
-				<h1 class="section__header_first">Работы <img src="assets/sample3.png" height="64" width="64"> наших <img src="assets/sample4.png" height="64" width="64"> мастеров</h1>
+				<div class="header_wrapper">
+					<h1 class="section__header_first">Работы <img src="assets/sample3.png" height="64" width="64"> наших</h1>
+					<h1 class="section__header_first"><img src="assets/sample4.png" height="64" width="64"> мастеров</h1>
+				</div>
 				<p class="section__header_second">Наша цель – воплотить <br> ваши мечты в интерьере</p>
 			</header>
 			<main class="slider">
@@ -96,7 +102,10 @@
 							<img class="slider__image" src="assets/slider/slider2.png">
 						</li>
 						<li class="slider__slide">
-							<img class="slider__image" src="assets/slider/slider1.png">
+							<img class="slider__image" src="assets/slider/slider3.png">
+						</li>
+						<li class="slider__slide">
+							<img class="slider__image" src="assets/slider/slider4.png">
 						</li>
 					</ul>
 				</div>
@@ -163,7 +172,7 @@
 				<div class="work-scope">
 					<div class="work-scope__toddler">
 						<p>Объем работ</p>
-						<p id="toddler-result">0 кв м<sup>2</sup></p>
+						<p id="toddler-result">100 кв м<sup>2</sup></p>
 					</div>
 					<div class="toddler-container">
 						<input name="user_area" id="toddler" type="range" min="0" max="200" step="50" oninput="toddler()">		
@@ -183,7 +192,14 @@
 	<section class="masters">
 		<div class="wrapper">
 			<header class="section__header">
-				<h1 class="section__header_first masters__header">Мастера <img src="assets/sample2.png" height="64" width="64">декоративной<br>отделки</h1>
+				<div class="header_wrapper">
+					<h1 class="section__header_first masters__header"> 
+						Мастера <img src="assets/sample2.png" height="64" width="64"> декоративной
+					</h1>
+					<h1 class="section__header_first">
+						краски и штукатурки
+					</h1>
+				</div>
 			</header>
 			
 			<div class="masters__body">
@@ -195,7 +211,7 @@
 				</div>
 				<div class="masters__people">
 					<div class="avatar">
-						<img id="victor" class="avatar__item" src="assets/avatar1.png" height="184" width="184" alt="">
+						<img id="victor" class="avatar__item _selected" src="assets/avatar1.png" height="184" width="184" alt="">
 						<img id="albert" class="avatar__item" src="assets/avatar2.png" height="184" width="184" alt="">
 						<img id="eduard" class="avatar__item" src="assets/avatar3.png" height="184" width="184" alt="">
 					</div>
@@ -232,14 +248,16 @@
 				</div>
 
 				<div class="choose-us__reasons-item--left">
-					<p>
+					<p class="reasons">
 						У нас работают только <span>высоко квалифицированные мастера</span> и на постоянной основе. Только так можно гарантировать качество проводимых работ.
 					</p>
+					<p class="choose-us__item-number top-left">01.</p>
 				</div>
 				<div class="choose-us__reasons-item--right">
-					<p>
+					<p class="reasons">
 						Максимально точная и подробная смета. <span>Без скрытых расходов и дополнительных платежей</span>. Вы не заплатите ни копейки больше, чем указано в смете.
 					</p>
+					<p class="choose-us__item-number top-right">02.</p>
 				</div>
 			</div>
 			<!-- _________ -->
@@ -251,14 +269,16 @@
 				</div>
 
 				<div class="choose-us__reasons-item--left">
-					<p>
+					<p class="reasons">
 						У нас работают только <span>высоко квалифицированные мастера</span> и на постоянной основе. Только так можно гарантировать качество проводимых работ.
 					</p>
+					<p class="choose-us__item-number top-left">03.</p>
 				</div>
 				<div class="choose-us__reasons-item--right">
-					<p>
+					<p class="reasons">
 						Максимально точная и подробная смета. <span>Без скрытых расходов и дополнительных платежей</span>. Вы не заплатите ни копейки больше, чем указано в смете.
 					</p>
+					<p class="choose-us__item-number top-right">04.</p>
 				</div>
 			</div>
 			<!-- __________ -->
@@ -269,7 +289,7 @@
 	<section class="how-we-work">
 		<div class="wrapper">
 			<header class="section__header">
-				<h1 class="section__header_first">Как мы работаем</h1>
+				<h1 class="section__header_first">Как мы <span><img src="assets/sample6.png" height="64" width="64" alt=""></span> работаем</h1>
 			</header>
 			<p class="section__header_second">Основные этапы работ</p>
 			<div class="how-we-work__items">

@@ -3,7 +3,6 @@ const samplesArray = Array.from(document.querySelectorAll('.samples__body-item')
 const samplesBgMasks = Array.from(document.querySelectorAll('#samples__backgorund-mask'));
 samplesBgMasks[0].style.display = 'block';
 
-console.log(samplesBgMasks.src);
 samplesArray.forEach((item, index, arr) => {
 	item.addEventListener('click', e => {
 		for (let i = 0; i < samplesArray.length; i++) {
@@ -18,6 +17,7 @@ samplesArray.forEach((item, index, arr) => {
 		}
 	})
 });
+
 
 // Slider
 const track = document.querySelector('.slider__track');
@@ -34,7 +34,8 @@ slides.forEach(setSlidePosition);
 
 // Function to move slides
 const moveToSlide = (track, currentSlide, targetSlide) => {
-	track.style.transform = 'translateX(-' + targetSlide.style.left + ')';
+
+	track.style.transform = `translateX(-${parseInt(targetSlide.style.left)}px)`;
 	currentSlide.classList.remove('current-slide');
 	targetSlide.classList.add('current-slide');
 }
@@ -44,6 +45,8 @@ prevButton.addEventListener('click', e => {
 	const currentSlide = document.querySelector('.current-slide');
 	const prevSlide = currentSlide.previousElementSibling;
 
+	//let tmp = 0;
+
 	moveToSlide(track, currentSlide, prevSlide);
 })
 
@@ -51,7 +54,9 @@ prevButton.addEventListener('click', e => {
 nextButton.addEventListener('click', e => {
 	const currentSlide = document.querySelector('.current-slide');
 	const nextSlide = currentSlide.nextElementSibling;
-	
+
+	//let tmp = -200;
+
 	moveToSlide(track, currentSlide, nextSlide);
 })
 
@@ -100,6 +105,12 @@ for (let i = 0; i < avatarItem.length; i++) {
 		displayDescription(e.target)
 
 		e.target.remove();
+		
+		for (let j = 0; j < avatarItem.length; j++) {
+			avatarItem[j].classList.remove('_selected');
+		}
+
+		e.target.classList.add('_selected');
 
 		const newAvatarItem = document.querySelectorAll('.avatar__item');
 		avatarContainer.insertBefore(e.target, newAvatarItem[0]);
