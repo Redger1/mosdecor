@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,7 +29,7 @@
 					<img src="assets/header_logo.svg">
 				</div>
 				<div class="header__contact">
-					7(999)-999-99-99
+					<a href="tel:79099999999">7(999)-999-99-99</a>
 				</div>
 			</div>
 			<div class="header__title">
@@ -122,69 +122,75 @@
 			<h1 class="section__header_first">Расчитайте стоимость работ</h1>
 			<p class="section__header_second">Учтем ваш выбор, перезвоним и предоставим актуальную стоимость.</p>
 			<img id="calculate__image" src="assets/slider/slider2.png" height="660" width="1357" alt="">
-			<div class="calculate__calculator">
-				<div class="room-type">
-					<p>Тип помещения</p>
-					<div class="form-group">
-						<div class="dropdown">
-							<button type="button" class="dropdown__button">Квартира</button>
-							<ul class="dropdown__list">
-								<li class="dropdown__list-item" data-value="kvartira">Квартира</li>
-								<li class="dropdown__list-item" data-value="dom">Дом</li>
-								<li class="dropdown__list-item" data-value="nejiloe_pomechenie">Нежилое помещение</li>
-							</ul>
-							<input type="text" name="room-type" class="dropdown__input-hidden">
+			<div>
+
+				<form action="#" class="calculate__calculator" id="form">
+
+					<div class="room-type">
+						<p>Тип помещения</p>
+						<div class="form-group">
+							<div class="dropdown">
+								<button type="button" class="dropdown__button">Квартира</button>
+								<ul class="dropdown__list">
+									<li class="dropdown__list-item" data-value="kvartira">Квартира</li>
+									<li class="dropdown__list-item" data-value="dom">Дом</li>
+									<li class="dropdown__list-item" data-value="nejiloe_pomechenie">Нежилое помещение</li>
+								</ul>
+								<input type="text" name="room-type" class="dropdown__input-hidden _req">
+							</div>
 						</div>
 					</div>
-				</div>
-				<div class="cover-type">
-					<p>Тип штукатурки</p>
-					<div class="form-group">
-						<div class="dropdown">
-							<button type="button" class="dropdown__button">Веницианская</button>
-							<ul class="dropdown__list">
-								<li class="dropdown__list-item" data-value="venecianskaya">Веницианская</li>
-								<li class="dropdown__list-item" data-value="peschanaya">Песчанная</li>
-								<li class="dropdown__list-item" data-value="shelk">Шелковая</li>
-								<li class="dropdown__list-item" data-value="perlamutrovaya">Перламутровая</li>
-							</ul>
-							<input type="text" name="cover-type" class="dropdown__input-hidden">
+					<div class="cover-type">
+						<p>Тип штукатурки</p>
+						<div class="form-group">
+							<div class="dropdown">
+								<button type="button" class="dropdown__button">Веницианская</button>
+								<ul class="dropdown__list">
+									<li class="dropdown__list-item" data-value="venecianskaya">Веницианская</li>
+									<li class="dropdown__list-item" data-value="peschanaya">Песчанная</li>
+									<li class="dropdown__list-item" data-value="shelk">Шелковая</li>
+									<li class="dropdown__list-item" data-value="perlamutrovaya">Перламутровая</li>
+								</ul>
+								<input type="text" name="cover-type" class="dropdown__input-hidden _req">
+							</div>
 						</div>
 					</div>
-				</div>
+					
+					<div class="wall-setup">
+						<p>Подготовка стен</p>
+						<div class="wall-setup__checkbox">
+							<label for="done" class="radio">
+								<input name="complete" class="radio__input _req" value="done" type="radio" id="done">
+								<div class="radio__radio"></div>
+								Сделана
+							</label>
+							<label for="walls" class="radio">
+								<input name="complete" class="radio__input _req" value="notDone" type="radio" id="walls">
+								<div class="radio__radio"></div>
+								Не сделано
+							</label>
+						</div>
+					</div>
 				
-				<div class="wall-setup">
-					<p>Подготовка стен</p>
-					<div class="wall-setup__checkbox">
-						<label for="done" class="radio">
-							<input name="complete" class="radio__input" value="done" type="radio" id="done">
-							<div class="radio__radio"></div>
-							Сделана
-						</label>
-						<label for="walls" class="radio">
-							<input name="complete" class="radio__input" value="notDone" type="radio" id="walls">
-							<div class="radio__radio"></div>
-							Не сделано
-						</label>
+					<div class="work-scope">
+						<div class="work-scope__toddler">
+							<p>Объем работ</p>
+							<p id="toddler-result">100 кв м<sup>2</sup></p>
+						</div>
+						<div class="toddler-container">
+							<input name="user_area" id="toddler" type="range" min="0" max="200" step="50" onchange="toddler()">		
+						</div>
 					</div>
-				</div>
-			
-				<div class="work-scope">
-					<div class="work-scope__toddler">
-						<p>Объем работ</p>
-						<p id="toddler-result">100 кв м<sup>2</sup></p>
+					<div class="phone">
+						<p>Ваш номер телефона*</p>
+						<input class="_phone _req" name="user_phone" placeholder="+7 (999)-999-99-99" type="tel">
 					</div>
-					<div class="toddler-container">
-						<input name="user_area" id="toddler" type="range" min="0" max="200" step="50" oninput="toddler()">		
+					<div class="button">
+						<button type="submit" class="calculate__button">Расчитать стоимость</button>
 					</div>
-				</div>
-				<div class="phone">
-					<p>Ващ номер телефона*</p>
-					<input name="user_phone" placeholder="+7 (999)-999-99-99" type="tel">
-				</div>
-				<div class="button">
-					<button type="submit" class="calculate__button">Расчитать стоимость</button>
-				</div>
+
+				</form>
+
 			</div>
 		</div>
 	</section>
@@ -366,5 +372,6 @@
 		</div>
 	</footer>
 	<script src="js/main.js"></script>
+	<script src="js/form.js"></script>
 </body>
 </html>
