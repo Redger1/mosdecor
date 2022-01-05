@@ -1,30 +1,18 @@
 @font-face {
-    font-family: 'MakLight';
-    src: url('../fonts/MAK.eot');
-    src: url('../fonts/MAK.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/MAK.woff') format('woff'),
-         url('../fonts/MAK.ttf') format('truetype');
+    font-family: 'CimeroPro';
+    src: url('../fonts/CimeroPro/CimeroPro.otf');
+    src: url('../fonts/CimeroPro/CimeroPro.otf') format("opentype");
     font-style: normal;
     font-weight: normal;
     text-rendering: optimizeLegibility;
 }
 @font-face {
-	font-family: 'Mak';
-    src: url('../fonts/MAK-bold.eot');
-    src: url('../fonts/MAK-bold.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/MAK-bold.woff') format('woff'),
-         url('../fonts/MAK-bold.ttf') format('truetype');
-    font-style: normal;
-    font-weight: bold;
-    text-rendering: optimizeLegibility;
+	font-family: 'OpenSans';
+	src: url('../fonts/OpenSans/OpenSans-Regular.ttf');
 }
 @font-face {
-	font-family: 'Roboto';
-	src: url('../fonts/Roboto/Roboto-Regular.ttf');
-}
-@font-face {
-  font-family: 'RobotoLight';
-  src: url('../fonts/Roboto/Roboto-Light.ttf');
+  font-family: 'Montserrat';
+  src: url('../fonts/Montserrat/Montserrat-Light.ttf');
 }
 
 /* Указываем box sizing */
@@ -107,12 +95,15 @@ select {
 button {
   cursor: pointer;
 }
+button:focus {
+  outline: none;
+}
 
 :root {
-	--main-font: 'MakLight';
+	--main-font: 'CimeroPro';
   --main-font-bold: 'Mak';
-  --other-fonts: 'RobotoLight';
-  --other-fonts-bold: 'Roboto';
+  --other-fonts: 'Montserrat';
+  --other-fonts-bold: 'OpenSans';
 }
 
 /* Repetitive */
@@ -141,6 +132,14 @@ button {
 
 .section__header,
 .section__header h1 { display: flex; }
+
+.samples,
+.works,
+.calculate,
+.masters,
+.choose-us {
+  background-color: #FCF9F5;
+}
 /* __________ */
 
 /* Header */
@@ -275,12 +274,36 @@ button {
 .header__title {
   position: absolute;
   top: 50%;
-  transform: translate(0, -40%);
-  font-size: 7.5rem;
+  left: 50%;
+  transform: translate(-50%, -40%);
   font-family: var(--main-font);
-  line-height: 1;
   text-align: center;
   text-transform: uppercase;
+  width: max-content;
+
+
+}
+.header__title--first-row {
+  font-size: 8rem;
+  line-height: 0.9;
+  margin-bottom: 10px;
+
+  color: black !important;
+  text-fill-color: white;
+  -webkit-text-fill-color: white;
+  -moz-text-fill-color: white;
+  -ms-text-fill-color: white;
+}
+.header__title--second-row {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 100px;
+
+  color: black !important;
+  text-fill-color: white;
+  -webkit-text-fill-color: white;
+  -moz-text-fill-color: white;
+  -ms-text-fill-color: white;
 }
 .header__title button {
   font-family: var(--other-fonts-bold);
@@ -321,7 +344,6 @@ section .wrapper {
         Samples
   ===================*/
 .samples {
-  background: #FFE8D6;
   position: relative;
 }
 
@@ -390,10 +412,6 @@ section .wrapper {
 /*===================
       Work Section
   ===================*/
-.works {
-  background: #FFE8D6;
-}
-
 .works .section__header_first {
   max-width: initial;
 }
@@ -454,9 +472,6 @@ section .wrapper {
 /*=================== 
    Calculate Section
   ===================*/
-.calculate {
-  background: #FFE8D6;
-}
 .calculate .wrapper {
   position: relative;
 }
@@ -701,10 +716,6 @@ section .wrapper {
 /*=================== 
         Masters
   ===================*/
-.masters {
-  background: #FFE8D6;
-}
-
 .masters .section__header_first { max-width: initial; }
 
 .masters__header {
@@ -786,10 +797,6 @@ section .wrapper {
 /*=================== 
       Choose Us
   ===================*/
-.choose-us {
-  background: #FFE8D6;
-}
-
 .choose-us .section__header {
   align-items: center;
   flex-direction: column;
