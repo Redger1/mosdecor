@@ -19,6 +19,7 @@ samplesArray.forEach((item, index, arr) => {
 });
 
 
+
 // Slider
 const track = document.querySelector('.slider__track');
 const slides = Array.from(track.children);
