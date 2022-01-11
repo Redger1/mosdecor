@@ -100,6 +100,10 @@ select {
   font: inherit;
 }
 
+section {
+  overflow: hidden;
+}
+
 button {
   cursor: pointer;
 }
@@ -799,6 +803,11 @@ section .wrapper {
   gap: 30px;
   margin-top: 100px;
 }
+
+.mobile-masters {
+  display: none;
+}
+
 .video {
   width: 50%;
 }
@@ -974,7 +983,7 @@ section .wrapper {
     How Do We Work
   ===================*/
 .how-we-work {
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.85)),
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
               url('../assets/how_we_work_bg.png') 0 0 / 100% no-repeat;
   background-size: cover;
   position: relative;
@@ -1285,7 +1294,10 @@ section .wrapper {
     display: flex;
   }
   .samples .wrapper {
-    padding-top: 70px;
+    padding-top: 50px;
+  }
+  .works .wrapper {
+    padding-top: 20px;
   }
   .section__header,
   .masters__body {
@@ -1399,8 +1411,14 @@ section .wrapper {
     padding-top: 70px;
   }
 
+  .section__header h1 img {
+    height: 60px;
+    width: 60px;
+    margin: -10px 12px 10px 12px;
+  }
+
   .header__title--first-row {
-    font-size: calc(72px + (88 + 88 * 0.7) * ((100vw - 375px) / 1920));
+    font-size: calc(72px + (8 + 8 * 0.7) * ((100vw - 600px) / 100));
   }
   .header__title--second-row {
     font-size: 28px;
@@ -1430,7 +1448,8 @@ section .wrapper {
   }
 
   .slider {
-    height: 420px;
+    height: 380px;
+    margin-top: 40px;
   }
   .slider__button {
     width: 65px;
@@ -1494,5 +1513,259 @@ section .wrapper {
   .menu__item {
     font-size: 3rem;
     padding: 20px 0;
+  }
+
+
+  /*Потом убрать*/
+  .calculate__calculator {
+    display: none;
+  }
+}
+
+@media (max-width: 599px) {
+  .calculate .wrapper {
+    padding: 80px 0 0 0;
+  }
+  .header__title--second-row {
+    margin-bottom: 40px;
+  }
+  .section__header_first {
+    font-size: 3rem;
+  }
+  .section__header_second {
+    font-size: 1.25rem;
+  }
+  .samples .section__header_second {
+    max-width: 70% !important;
+  }
+
+  .header__title button {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+
+  /* Заменить на классы */
+  .section__header h1 img {
+    margin: -10px 12px 10px 12px;
+    height: 54px;
+    width: 54px;
+  }
+
+  .masters__people {
+    display: none;
+  }
+  .mobile-masters__item {
+    width: 77%;
+    margin: 40px 0;
+  }
+
+  .mobile-masters__item:nth-child(2) {
+    margin: 40px 0 40px auto;
+  }
+  .mobile-masters__item:nth-child(2) .mobile-masters__descr {
+    text-align: right;
+  }
+  .mobile-masters__item:nth-child(2) .mobile-masters__header {
+    flex-direction: row-reverse;
+  }
+
+  .mobile-masters__header {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  .mobile-masters__descr {
+    font-size: 1.25rem;
+    font-family: var(--other-fonts);
+    font-weight: 300;
+    line-height: 1.3;
+    margin-top: 20px;
+  }
+  .name {
+    font-family: var(--main-font);
+    font-size: 2rem;
+    line-height: 1.1;
+  }
+  .mobile_avatar {
+    height: 80px;
+    width: 80px;
+    border: 2px solid #292C26;
+    border-radius: 50%;
+    padding: 3px;
+  }
+
+  .choose-us .wrapper {
+    padding-bottom: 60px;
+  }
+  .choose-us__reasons {
+    margin-bottom: 0;
+  }
+  .choose-us .section__header {
+    width: 70%;
+    margin: 0 auto;
+    margin-bottom: 40px;
+  }
+  .choose-us .section__header_first,
+  .choose-us .section__header_second {
+    justify-content: center;
+  }
+  .choose-us__reasons-item--left .reasons,
+  .choose-us__reasons-item--right .reasons {
+    font-size: 1.25rem;
+    width: 75%;
+  }
+
+  .left-clip {
+    display: none;
+  }
+  .choose-us__reasons-item--left,
+  .choose-us__reasons-item--right {
+    position: relative;
+    width: 100%;
+    padding: 48px 0;
+    margin-bottom: -20px;
+    backdrop-filter: blur(1px);
+  }
+  .choose-us__item-number {
+    font-size: 3rem;
+  }
+  .choose-us__item-number.top-right {
+    left: 5%;
+  }
+
+
+  .how-we-work .section__header_first {
+    margin-bottom: 4px;
+  }
+  .how-we-work__items {
+    padding: 40px 0;
+  }
+  .how-we-work__items__header {
+    font-size: 2rem;
+  }
+  .how-we-work__items__paragraph {
+    font-size: 1.25rem;
+  }
+
+
+  .footer .wrapper,
+  .choose-us .wrapper,
+  .masters .wrapper {
+    padding: 40px 0;
+  }
+  .footer h1 {
+    font-size: 4.5rem;
+  }
+  .footer__contacts__items h2 {
+    font-size: 3rem;
+  }
+  .footer__contacts__items p {
+    font-size: 1.25rem;
+  }
+  .footer_contacts__map {
+    height: 320px;
+  }
+}
+
+@media (min-width: 376px) {
+  .header__title--first-row br {
+    display: none;
+  }
+}
+@media (max-width: 375px) {
+  .menu__burger {
+    width: 60px;
+    height: 24px;
+  }
+  .header__title--first-row {
+    font-size: 6rem;
+  }
+  .header__title--second-row {
+    font-size: 1.25rem;
+  }
+  .header__title button {
+    font-size: 1rem;
+  }
+
+
+  .section__header_first {
+    font-size: 2.5rem;
+  }
+  .section__header h1 img {
+    height: 36px;
+    width: 36px;
+    margin: -3px 8px 10px 8px;
+  }
+  .section__header_second {
+    line-height: 1.1;
+  }
+  .samples .section__header_second {
+    max-width: 100% !important;
+  }
+  .samples .wrapper {
+    padding-bottom: 60px;
+  }
+
+  .choose-us__reasons-item--right,
+  .choose-us__reasons-item--left {
+    padding: 20px 0;
+    width: 125%;
+    margin: 0px -40px -10px;
+  }
+  .choose-us__reasons-item--left .reasons,
+  .choose-us__reasons-item--right .reasons {
+    font-size: 1rem;
+  }
+  .choose-us__item-number.top-left,
+  .choose-us__item-number.top-right {
+    font-size: 1.75rem;
+    left: 10%;
+  }
+
+
+  .how-we-work__items__header {
+    font-size: 1.75rem;
+  }
+  .how-we-work__items__paragraph {
+    font-size: 1.125rem;
+  }
+
+  .footer__socials img {
+    width: 40px;
+    height: 40px;
+  }
+  .footer h1 {
+    font-size: 3rem;
+  }
+  .footer__contacts {
+    margin-top: 40px;
+  }
+  .footer__contacts__items {
+    margin-bottom: 40px;
+  }
+  .footer__contacts__items h2 {
+    font-size: 2rem;
+  }
+  .footer__contacts__items p {
+    font-size: 1.125rem;
+  }
+  .footer_contacts__map {
+    height: 140px;
+  }
+  .contacts-item img {
+    width: 21px;
+  }
+  .contacts-item {
+    gap: 15px;
+    margin-top: 30px;
+  }
+
+
+
+  .menu__item {
+    font-size: 2rem;
+    border-bottom: 3px solid #fff;
   }
 }
