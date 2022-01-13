@@ -1486,6 +1486,9 @@ section .wrapper {
     display: none;
   }
 
+  .mobile-masters {
+    display: block;
+  }
   .mobile-masters__item {
     width: 77%;
     margin: 40px 0;

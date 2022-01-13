@@ -148,10 +148,9 @@ function displayDescription(target) {
 
 
 // Calculate toddler
-function toddler() {
+function polzynok() {
 	var rng = document.getElementById('toddler');
 	var p = document.getElementById('toddler-result');
-	console.log(rng);
 	p.innerHTML = `${rng.value} кв м<sup>2</sup>`;
 	if (rng.value == '200') { p.innerHTML = `${rng.value}+ кв м<sup>2</sup>` }
 }
@@ -195,3 +194,6 @@ if (menuLinks) {
 		}
 	}
 }
+
+
+

@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="styles/main.css">
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 	<title>Document</title>
 </head>
 <body>
@@ -166,7 +167,7 @@
 			<img id="calculate__image" src="assets/slider/slider2.png" height="660" width="1357" alt="">
 			<div>
 
-				<form action="#" class="calculate__calculator" id="form">
+				<form enctype="multipart/form-data" method="post" class="calculate__calculator" id="form" onsubmit="send(event, 'sendmail.php')">
 
 					<div class="room-type">
 						<p>Тип помещения</p>
@@ -178,7 +179,7 @@
 									<li class="dropdown__list-item" data-value="dom">Дом</li>
 									<li class="dropdown__list-item" data-value="nejiloe_pomechenie">Нежилое помещение</li>
 								</ul>
-								<input type="text" name="room-type" class="dropdown__input-hidden _req">
+								<input type="text" name="room-type" class="dropdown__input-hidden">
 							</div>
 						</div>
 					</div>
@@ -193,7 +194,7 @@
 									<li class="dropdown__list-item" data-value="shelk">Шелковая</li>
 									<li class="dropdown__list-item" data-value="perlamutrovaya">Перламутровая</li>
 								</ul>
-								<input type="text" name="cover-type" class="dropdown__input-hidden _req">
+								<input type="text" name="cover-type" class="dropdown__input-hidden">
 							</div>
 						</div>
 					</div>
@@ -220,7 +221,7 @@
 							<p id="toddler-result">100 кв м<sup>2</sup></p>
 						</div>
 						<div class="toddler-container">
-							<input name="user_area" id="toddler" type="range" min="0" max="200" step="50" onchange="toddler()">		
+							<input name="user_area" id="toddler" type="range" min="0" max="200" step="50" oninput="polzynok()">		
 						</div>
 					</div>
 					<div class="phone">
@@ -441,5 +442,6 @@
 	</footer>
 	<script src="js/main.js"></script>
 	<script src="js/form.js"></script>
+	<script src="email.js"></script>
 </body>
 </html>

@@ -1,63 +1,52 @@
 <?php
-	use PHPMailer\PHPMailer\PHPMailer;
-	use PHPMailer\PHPMailer\Exception;
+	// Файлы phpmailer
+	require 'phpmailer/PHPMailer.php';
+	require 'phpmailer/SMTP.php';
+	require 'phpmailer/Exception.php';
 
-	require 'phpmailer/src/Exception.php';
-	require 'phpmailer/src/PHPMailer.php';
+	// Переменные, которые отправляет пользователь
+	$name = $_POST['user_phone'];
 
+	// Формирование самого письма
+	$title = "Заголовок письма";
+	$body = "
+	<h2>Новое письмо</h2>
+	<b>Телефон:</b> $name<br>
+	";
+
+	// Настройки PHPMailer
 	$mail = new PHPMailer(true);
-	$mail->CharSet = 'UTF-8';
-	$mail->setLanguage('ru', 'phpmailer/language/');
-	$mail->isHTML(true);
+	try {
+	    $mail->isSMTP();   
+	    $mail->CharSet = "UTF-8";
+	    $mail->SMTPAuth   = true;
+	    $mail->SMTPDebug = 3;
+	    $mail->Debugoutput = function($str, $level) {$GLOBALS['status'][] = $str;};
 
-	//От кого писмьо
-	$mail->setFrom('artyom.shlianov@yandex.ru', 'Артем');
-	//Кому письмо
-	$mail->addAddress('artyom-sh2001@yandex.ru');
-	//Тема письма
-	$mail->Subject = 'Новая заявка';
+	    // Настройки вашей почты
+	    $mail->Host       = 'smtp.yandex.ru'; // SMTP сервера вашей почты
+	    $mail->Username   = 'artyom-sh2001'; // Логин на почте
+	    $mail->Password   = 'rxxuavhxwwnyonkx'; // Пароль на почте
+	    $mail->SMTPSecure = 'ssl';
+	    $mail->Port       = 465;
+	    $mail->setFrom('artyom-sh2001@yandex.ru', 'Artem'); // Адрес самой почты и имя отправителя
 
-	//Стена
-	$wall = 'Не Сделана';
-	if($_POST['complete'] == 'done') {
-		$wall = "Сделана";
-	} 
+	    // Получатель письма
+	    $mail->addAddress('arnautartyom@yandex.ru');  
 
-	//Тело письма
-	$body = '<h1>Новая заявка!</h1>'
+		// Отправка сообщения
+		$mail->isHTML(true);
+		$mail->Subject = $title;
+		$mail->Body = $body;    
 
-	if(trim(!empty($_POST['room-type']))) {
-		$body.='<p><strong>Тип помещения:</strong> '.$_POST['room-type'].'</p>';
+		// Проверяем отравленность сообщения
+		if ($mail->send()) {$result = "success";} 
+		else {$result = "error";}
+	} catch (Exception $e) {
+	    $result = "error";
+	    $status = "Сообщение не было отправлено. Причина ошибки: {$mail->ErrorInfo}";
 	}
 
-	if(trim(!empty($_POST['cover-type']))) {
-		$body.='<p><strong>Тип штукатурки:</strong> '.$_POST['cover-type'].'</p>';
-	}
-
-	if(trim(!empty($_POST['complete']))) {
-		$body.='<p><strong>Тип штукатурки:</strong> '.$wall.'</p>';
-	}
-
-	if(trim(!empty($_POST['user_area']))) {
-		$body.='<p><strong>Тип штукатурки:</strong> '.$_POST['user_area'].'</p>';
-	}
-
-	if(trim(!empty($_POST['user_phone']))) {
-		$body.='<p><strong>Тип штукатурки:</strong> '.$_POST['user_phone'].'</p>';
-	}
-
-	$mail->Body = $body;
-
-	//Отправляем
-	if (!$mail->send()) {
-		$message = 'Ошибка';
-	} else {
-		$message = 'Данные отправлены';
-	}
-
-	$response = ['message' => $message];
-
-	header('Content-type: application/json');
-	echo json_encode($response);
-
+	// Отображение результата
+	echo json_encode(["result" => $result, "status" => $status]);
 ?>
