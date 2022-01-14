@@ -164,8 +164,9 @@
 		<div class="wrapper">
 			<h1 class="section__header_first">Расчитайте стоимость работ</h1>
 			<p class="section__header_second">Учтем ваш выбор, перезвоним и предоставим актуальную стоимость.</p>
+			<div class="calculate__wrapper">
 			<img id="calculate__image" src="assets/slider/slider2.png" height="660" width="1357" alt="">
-			<div>
+			
 
 				<form enctype="multipart/form-data" method="post" class="calculate__calculator" id="form" onsubmit="send(event, 'sendmail.php')">
 
@@ -218,7 +219,7 @@
 					<div class="work-scope">
 						<div class="work-scope__toddler">
 							<p>Объем работ</p>
-							<p id="toddler-result">100 кв м<sup>2</sup></p>
+							<p id="toddler-result">100 <span class="work-scope__square">кв</span> м<sup>2</sup></p>
 						</div>
 						<div class="toddler-container">
 							<input name="user_area" id="toddler" type="range" min="0" max="200" step="50" oninput="polzynok()">		

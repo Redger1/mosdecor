@@ -559,6 +559,7 @@ section .wrapper {
 }
 .calculate__calculator {
   display: grid;
+  padding: 40px;
   /*grid-template-rows: 1fr 1fr 1fr;*/
   grid-template-columns: 1fr 1fr;
   width: max-content;
@@ -576,9 +577,6 @@ section .wrapper {
   font-size: 2.25rem;
   font-family: var(--main-font);
   line-height: 1;
-}
-.calculate__calculator {
-  padding: 40px;
 }
 .calculate__calculator div p {
   margin-bottom: 20px;
@@ -640,7 +638,6 @@ section .wrapper {
 .work-scope__toddler {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
 
   max-height: 36px;
   margin-bottom: 20px;
@@ -659,7 +656,7 @@ section .wrapper {
 #toddler-result {
   font-family: var(--other-fonts);
   font-size: 1.5rem;
-  line-height: 1.5;
+  line-height: 0.5;
 }
 
 #toddler {
@@ -1176,7 +1173,7 @@ section .wrapper {
 
   .masters__body,
   .how-we-work__items {
-    margin-top: 60px;
+    margin-top: 40px;
   }
   .avatar__item {
     width: 146px;
@@ -1386,9 +1383,46 @@ section .wrapper {
   .slider__button--left { left: -20px; }
   .slider__button--right { right: -20px; }
 
+
+
   #calculate__image {
     margin-top: 40px;
   }
+  .calculate__wrapper {
+    position: relative;
+  }
+  .calculate__calculator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    grid-template-columns: 50% calc(50% - 20px);
+    grid-gap: 20px;
+    padding: 20px 20px 0 20px;
+    background: rgba(100, 88, 83, 0.1);
+  }
+
+  .calculate__calculator p { font-size: 2rem; }
+
+  .calculate__calculator .button button,
+  .calculate__calculator input,
+  .dropdown__button {
+    font-size: 1.25rem;
+    height: 54px;
+  }
+  /*.dropdown__button {
+    width: calc(100% - 20px);
+  }*/
+  .work-scope__square { display: none; }
+  .wall-setup__checkbox { display: block; }
+  .calculate__calculator .button { align-self: start; }
+  .calculate__button {
+    margin-top: 52px;
+  }
+
+
 
   .description p,
   .how-we-work__items__paragraph,
@@ -1443,12 +1477,6 @@ section .wrapper {
     font-size: 3rem;
     padding: 20px 0;
   }
-
-
-  /*Потом убрать*/
-  .calculate__calculator {
-    display: none;
-  }
 }
 
 @media (max-width: 599px) {
@@ -1472,6 +1500,43 @@ section .wrapper {
     padding-bottom: 10px;
     font-size: 1.25rem;
     font-weight: 600;
+  }
+
+
+  .calculate__calculator {
+    display: block;
+    padding: 40px 20px;
+  }
+  .calculate__calculator > div {
+    margin-bottom: 30px;
+  }
+  .calculate__calculator .button button,
+  .calculate__calculator input,
+  .dropdown__button,
+  .radio,
+  .dropdown__list-item {
+    font-size: 1.125rem;
+    height: 50px;
+  }
+  .calculate__calculator input,
+  .dropdown__button {
+    padding-left: 16px;
+  }
+  #calculate__image {
+    height: 750px;
+  }
+  .phone {
+    margin-bottom: 0 !important;
+  }
+  .calculate__button { margin: 12px 0 0 0; }
+  .radio__radio,
+  #toddler::-webkit-slider-thumb {
+    height: 32px;
+    width: 32px;
+  }
+
+  .wall-setup__checkbox label {
+    margin-right: 24px;
   }
 
   /* Заменить на классы */
@@ -1575,6 +1640,15 @@ section .wrapper {
   }
 }
 
+@media (max-width: 450px) {
+  .samples__body--scroll-item {
+    width: 80%;
+  }
+  .samples-label p {
+    font-size: calc(100vw / 17 + 0.8vh);
+  }
+}
+
 @media (min-width: 376px) {
   .header__title--first-row br {
     display: none;
@@ -1628,6 +1702,14 @@ section .wrapper {
     height: 40px;
   }
 
+  #toddler-result {
+    font-size: 1.125rem;
+    margin-top: 5px;
+  }
+  .work-scope__toddler {
+    margin-bottom: 25px !important;
+  }
+
   .footer h1 { font-size: 3rem; }
   .footer__contacts__items h2 { font-size: 2rem; }
   .how-we-work__items__header { font-size: 1.75rem; }
@@ -1646,5 +1728,34 @@ section .wrapper {
   .menu__item {
     font-size: 2rem;
     border-bottom: 3px solid #fff;
+  }
+  .work-scope__toddler {
+    display: block;
+  }
+}
+
+@media (max-width: 359px) {
+  #calculate__image {
+    height: 800px ;
+  }
+}
+@media (max-width: 357px) {
+  #calculate__image {
+    height: 835px;
+  }
+}
+
+@media (max-width: 321px) and (max-height: 569px) {
+  .header .wrapper {
+    height: 100vh;
+  }
+  .header__title--first-row {
+    font-size: 87px;
+  }
+  .header__logo img {
+    max-width: 70%;
+  }
+  .menu__burger {
+    height: 19px;
   }
 }
