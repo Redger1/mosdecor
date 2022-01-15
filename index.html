@@ -168,7 +168,11 @@
 			<img id="calculate__image" src="assets/slider/slider2.png" height="660" width="1357" alt="">
 			
 
+<<<<<<< HEAD
 				<form enctype="multipart/form-data" method="post" class="calculate__calculator" id="form" onsubmit="send(event, 'sendmail.php')">
+=======
+				<form enctype="multipart/form-data" method="post" class="calculate__calculator" id="form">
+>>>>>>> calculator
 
 					<div class="room-type">
 						<p>Тип помещения</p>
@@ -176,9 +180,9 @@
 							<div class="dropdown">
 								<button type="button" class="dropdown__button">Квартира</button>
 								<ul class="dropdown__list">
-									<li class="dropdown__list-item" data-value="kvartira">Квартира</li>
-									<li class="dropdown__list-item" data-value="dom">Дом</li>
-									<li class="dropdown__list-item" data-value="nejiloe_pomechenie">Нежилое помещение</li>
+									<li class="dropdown__list-item" data-value="Квартира">Квартира</li>
+									<li class="dropdown__list-item" data-value="Дом">Дом</li>
+									<li class="dropdown__list-item" data-value="Нежилое помещение">Нежилое помещение</li>
 								</ul>
 								<input type="text" name="room-type" class="dropdown__input-hidden">
 							</div>
@@ -190,10 +194,10 @@
 							<div class="dropdown">
 								<button type="button" class="dropdown__button">Веницианская</button>
 								<ul class="dropdown__list">
-									<li class="dropdown__list-item" data-value="venecianskaya">Веницианская</li>
-									<li class="dropdown__list-item" data-value="peschanaya">Песчанная</li>
-									<li class="dropdown__list-item" data-value="shelk">Шелковая</li>
-									<li class="dropdown__list-item" data-value="perlamutrovaya">Перламутровая</li>
+									<li class="dropdown__list-item" data-value="Веницианская">Веницианская</li>
+									<li class="dropdown__list-item" data-value="Песчанная">Песчанная</li>
+									<li class="dropdown__list-item" data-value="Шелковая">Шелковая</li>
+									<li class="dropdown__list-item" data-value="Перламутровая">Перламутровая</li>
 								</ul>
 								<input type="text" name="cover-type" class="dropdown__input-hidden">
 							</div>
@@ -204,14 +208,14 @@
 						<p>Подготовка стен</p>
 						<div class="wall-setup__checkbox">
 							<label for="done" class="radio">
-								<input name="complete" class="radio__input _req" value="done" type="radio" id="done">
+								<input name="complete" class="radio__input _req" value="Сделана" type="radio" id="done" checked>
 								<div class="radio__radio"></div>
 								Сделана
 							</label>
 							<label for="walls" class="radio">
-								<input name="complete" class="radio__input _req" value="notDone" type="radio" id="walls">
+								<input name="complete" class="radio__input _req" value="Не сделана" type="radio" id="walls">
 								<div class="radio__radio"></div>
-								Не сделано
+								Не сделана
 							</label>
 						</div>
 					</div>
@@ -438,6 +442,10 @@
 	</footer>
 	<script src="js/main.js"></script>
 	<script src="js/form.js"></script>
+<<<<<<< HEAD
 	<script src="email.js"></script>
+=======
+	<script src="https://smtpjs.com/v3/smtp.js"></script>
+>>>>>>> calculator
 </body>
 </html>

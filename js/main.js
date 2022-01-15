@@ -92,8 +92,6 @@ document.querySelectorAll('.dropdown').forEach(function (dropdownWrapper) {
 document.querySelector('.calculate__button').addEventListener('click', e => {
 
 })
-// Нужно будет вывести две штуки hiddenInput.value, номер телефона
-// значения чекбокса и ползунка объема работ
 
 
 // Переключение аватарок
@@ -149,7 +147,11 @@ function displayDescription(target) {
 
 // Calculate toddler
 function polzynok() {
+<<<<<<< HEAD
 	const square = '';
+=======
+	var square = '';
+>>>>>>> calculator
 	console.log(window.innerWidth)
 	if (window.innerWidth >= 768) {
 		square = 'кв ';
