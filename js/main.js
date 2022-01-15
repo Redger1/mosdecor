@@ -92,8 +92,6 @@ document.querySelectorAll('.dropdown').forEach(function (dropdownWrapper) {
 document.querySelector('.calculate__button').addEventListener('click', e => {
 
 })
-// Нужно будет вывести две штуки hiddenInput.value, номер телефона
-// значения чекбокса и ползунка объема работ
 
 
 // Переключение аватарок
@@ -148,11 +146,17 @@ function displayDescription(target) {
 
 
 // Calculate toddler
-function toddler() {
+function polzynok() {
+	var square = '';
+	console.log(window.innerWidth)
+	if (window.innerWidth >= 768) {
+		square = 'кв ';
+	}
+	console.log(square);
 	var rng = document.getElementById('toddler');
 	var p = document.getElementById('toddler-result');
-	p.innerHTML = `${rng.value} кв м<sup>2</sup>`;
-	if (rng.value == '200') { p.innerHTML = `${rng.value}+ кв м<sup>2</sup>` }
+	p.innerHTML = `${rng.value} ${square}м<sup>2</sup>`;
+	if (rng.value == '200') { p.innerHTML = `${rng.value}+ ${square}м<sup>2</sup>` }
 }
 
 

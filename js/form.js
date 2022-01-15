@@ -9,24 +9,37 @@ document.addEventListener('DOMContentLoaded', function() {
 
 		let error = formValidate(form);
 
-		let formData = new FormData(form);
-
 		if (error === 0) {
 			form.classList.add('_sending');
-			let response = await fetch('sendmail.php', {
-				method: 'POST',
-				body: formData
-			});
-			if (response.ok) {
-				let result = await response.json();
-				alert(result.message);
-				formPreview.innerHTML = '';
-				form.reset();
-				form.classList.remove('_sending');
-			} else {
-				alert("Ошибка");
-				form.classList.remove('_sending');
-			}
+			let room_type = document.querySelectorAll('[name="room-type"]')[0].value;
+			let cover_type = document.querySelectorAll('[name="cover-type"]')[0].value;
+			let complete = document.querySelector('[name="complete"]:checked').value;
+			let user_area = document.querySelectorAll('[name="user_area"]')[0].value;
+			let user_phone = document.querySelectorAll('[name="user_phone"]')[0].value;
+
+			Email.send({
+				Host : "smtp.elasticemail.com",
+				Username : "arnautartyom@gmail.com",
+				Password : "61349B556A0FADD7F4B81508BD3E50753E93",
+				To : 'arnautartyom@yandex.com',
+				From : "arnautartyom@gmail.com",
+				Subject : "Поступила новая заявка с MosDecor!",
+				Body : `<div style="color: #333333; font: 32px Montserrat, sans-serif; line-height: 120%; -webkit-text-size-adjust:none; display: block;">Поступила новая заявка с MosDecor!</div>
+				<br>
+				<br>
+				<div style="color: #333333; font: 20px Montserrat, sans-serif; line-height: 30px; -webkit-text-size-adjust:none; display: block;">Тип помещения: <b>${room_type}</b>
+				<br>
+				Тип штукатурки: <b>${cover_type}</b>
+				<br>
+				Оттелка стен: <b>${complete}</b>
+				<br>
+				Объем работ: <b>${user_area} м<sup>2</sup></b> 
+				<br>
+				Номер телефона: <a href="tel:${user_phone}"><b>${user_phone}</b></a>
+				</div>`,
+			}).then(
+			message => alert("Сообщение отправлено")
+			);
 		} else {
 			alert('Заполните обязательные поля!');
 		}
@@ -36,6 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	function formValidate(form) {
 		let error = 0;
 		let formReq = document.querySelectorAll("._req");
+
 
 		for (let index = 0; index < formReq.length; index++) {
 			const input = formReq[index];
@@ -56,11 +70,9 @@ document.addEventListener('DOMContentLoaded', function() {
 	}
 
 	function formAddError(input) {
-		input.parentElement.classList.add("_error");
 		input.classList.add("_error");
 	}
 	function formRemoveError(input) {
-		input.parentElement.classList.remove("_error");
 		input.classList.remove("_error");
 	}
 

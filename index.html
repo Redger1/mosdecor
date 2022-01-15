@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="styles/main.css">
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 	<title>Document</title>
 </head>
 <body>
@@ -33,7 +34,7 @@
 				</div>
 			</div>
 			<div class="header__title">
-				<p class="header__title--first-row">Ведущие мастера</p>
+				<p class="header__title--first-row">Ведущие<br>мастера</p>
 				<p class="header__title--second-row">по декоративной <br> краске и штукатурке</p>
 				<button>Заказать звонок</button>
 			</div>
@@ -163,10 +164,11 @@
 		<div class="wrapper">
 			<h1 class="section__header_first">Расчитайте стоимость работ</h1>
 			<p class="section__header_second">Учтем ваш выбор, перезвоним и предоставим актуальную стоимость.</p>
+			<div class="calculate__wrapper">
 			<img id="calculate__image" src="assets/slider/slider2.png" height="660" width="1357" alt="">
-			<div>
+			
 
-				<form action="#" class="calculate__calculator" id="form">
+				<form enctype="multipart/form-data" method="post" class="calculate__calculator" id="form">
 
 					<div class="room-type">
 						<p>Тип помещения</p>
@@ -174,11 +176,11 @@
 							<div class="dropdown">
 								<button type="button" class="dropdown__button">Квартира</button>
 								<ul class="dropdown__list">
-									<li class="dropdown__list-item" data-value="kvartira">Квартира</li>
-									<li class="dropdown__list-item" data-value="dom">Дом</li>
-									<li class="dropdown__list-item" data-value="nejiloe_pomechenie">Нежилое помещение</li>
+									<li class="dropdown__list-item" data-value="Квартира">Квартира</li>
+									<li class="dropdown__list-item" data-value="Дом">Дом</li>
+									<li class="dropdown__list-item" data-value="Нежилое помещение">Нежилое помещение</li>
 								</ul>
-								<input type="text" name="room-type" class="dropdown__input-hidden _req">
+								<input type="text" name="room-type" class="dropdown__input-hidden">
 							</div>
 						</div>
 					</div>
@@ -188,12 +190,12 @@
 							<div class="dropdown">
 								<button type="button" class="dropdown__button">Веницианская</button>
 								<ul class="dropdown__list">
-									<li class="dropdown__list-item" data-value="venecianskaya">Веницианская</li>
-									<li class="dropdown__list-item" data-value="peschanaya">Песчанная</li>
-									<li class="dropdown__list-item" data-value="shelk">Шелковая</li>
-									<li class="dropdown__list-item" data-value="perlamutrovaya">Перламутровая</li>
+									<li class="dropdown__list-item" data-value="Веницианская">Веницианская</li>
+									<li class="dropdown__list-item" data-value="Песчанная">Песчанная</li>
+									<li class="dropdown__list-item" data-value="Шелковая">Шелковая</li>
+									<li class="dropdown__list-item" data-value="Перламутровая">Перламутровая</li>
 								</ul>
-								<input type="text" name="cover-type" class="dropdown__input-hidden _req">
+								<input type="text" name="cover-type" class="dropdown__input-hidden">
 							</div>
 						</div>
 					</div>
@@ -202,14 +204,14 @@
 						<p>Подготовка стен</p>
 						<div class="wall-setup__checkbox">
 							<label for="done" class="radio">
-								<input name="complete" class="radio__input _req" value="done" type="radio" id="done">
+								<input name="complete" class="radio__input _req" value="Сделана" type="radio" id="done" checked>
 								<div class="radio__radio"></div>
 								Сделана
 							</label>
 							<label for="walls" class="radio">
-								<input name="complete" class="radio__input _req" value="notDone" type="radio" id="walls">
+								<input name="complete" class="radio__input _req" value="Не сделана" type="radio" id="walls">
 								<div class="radio__radio"></div>
-								Не сделано
+								Не сделана
 							</label>
 						</div>
 					</div>
@@ -217,10 +219,10 @@
 					<div class="work-scope">
 						<div class="work-scope__toddler">
 							<p>Объем работ</p>
-							<p id="toddler-result">100 кв м<sup>2</sup></p>
+							<p id="toddler-result">100 <span class="work-scope__square">кв</span> м<sup>2</sup></p>
 						</div>
 						<div class="toddler-container">
-							<input name="user_area" id="toddler" type="range" min="0" max="200" step="50" onchange="toddler()">		
+							<input name="user_area" id="toddler" type="range" min="0" max="200" step="50" oninput="polzynok()">		
 						</div>
 					</div>
 					<div class="phone">
@@ -276,6 +278,32 @@
 							<h1>Константин Эдуардович</h1>
 							<p>Очень важно сохранять в себе творческое начало и чтобы оно не притуплялось на большом количестве заказов.</p>
 						</div>
+					</div>
+				</div>
+
+				<div class="mobile-masters">
+					<div class="mobile-masters__item">
+						<div class="mobile-masters__header">
+							<img class="mobile_avatar" src="assets/avatar1.png">
+							<p class="name">Виктор<br>Степанович</p>
+						</div>
+						<p class="mobile-masters__descr">Мне интересно воплощать идеи заказчиков в жизнь, проводить совместную творческую работу и вкладывать частичку себя.</p>
+					</div>
+
+					<div class="mobile-masters__item">
+						<div class="mobile-masters__header">
+							<img class="mobile_avatar" src="assets/avatar2.png">
+							<p class="name">Альберт<br>Евгеньевич</p>
+						</div>
+						<p class="mobile-masters__descr">В нашей мастерской мы можем создать вам любую фактуру, по вашим фантазиям или по фотографии.</p>
+					</div>
+
+					<div class="mobile-masters__item">
+						<div class="mobile-masters__header">
+							<img class="mobile_avatar" src="assets/avatar3.png">
+							<p class="name">Константин<br>Эдуардович</p>
+						</div>
+						<p class="mobile-masters__descr">Очень важно сохранять в себе творческое начало и чтобы оно не притуплялось на большом количестве заказов.</p>
 					</div>
 				</div>
 			</div>
@@ -415,5 +443,6 @@
 	</footer>
 	<script src="js/main.js"></script>
 	<script src="js/form.js"></script>
+	<script src="https://smtpjs.com/v3/smtp.js"></script>
 </body>
 </html>
