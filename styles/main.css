@@ -129,12 +129,13 @@ button:focus {
 }
 
 .section__header h1 {
-  max-width: 50%;
+  max-width: 100%;
   flex-wrap: wrap;
 }
 
 .section__header h1 img {
-  margin: 0 26px;
+  margin: -10px 20px 0 20px;
+
 }
 
 .section__header p {
@@ -170,6 +171,7 @@ button:focus {
   padding: 50px 0 0 0;
   height: 100vh;
 }
+
 
   /* Burger menu */
 .menu__burger {
@@ -911,18 +913,6 @@ section .wrapper {
   color: #FF570A;
 }
 
-.left-clip {
-  clip-path: ellipse(27.5% 50% at 27.5% 50%);
-  min-height: inherit;
-}
-.right-clip {
-  clip-path: ellipse(27.5% 50% at 72.5% 50%);
-  height: 100%;
-  min-height: inherit;
-  background-image: url('https://www.textures.com/system/gallery/photos/Fabric/Plain%20Fabric/120847/FabricPlain0147_3_350.jpg');
-}
-
-
 .choose-us__reasons-item--left,
 .choose-us__reasons-item--right {
   /*font-family: var(--other-fonts);
@@ -1146,6 +1136,17 @@ section .wrapper {
     left: -40px;
   }
 
+
+  .section__header h1 img {
+    height: 64px;
+    width: 64px;
+    margin: -10px 20px 0 20px;
+  }
+  .works .wrapper {
+    padding-top: 10px;
+  }
+
+
   .header__title button {
     padding-top: 15px;
     padding-bottom: 15px;
@@ -1265,7 +1266,11 @@ section .wrapper {
 
 
   .slider { height: 488px; }
-
+  .section__header h1 img {
+    height: 64px;
+    width: 64px;
+    margin: -10px 12px 0 12px;
+  }
 
   .calculate__calculator {
     width: 880px;
@@ -1296,6 +1301,21 @@ section .wrapper {
     margin: 0 auto;
   }
 
+
+  .choose-us__reasons-item--right,
+  .choose-us__reasons-item--left {
+    position: relative;
+    width: 80%;
+    padding: 35px 0;
+    backdrop-filter: blur(2px);
+  }
+  .choose-us__reasons-item--right {
+    margin: -20px 0 -60px auto;
+  }
+  .choose-us__reasons-item--left .reasons,
+  .choose-us__reasons-item--right .reasons {
+    width: 70%;
+  }
 
   .section__header_second { font-size: 1.875rem; }
 
@@ -1423,6 +1443,18 @@ section .wrapper {
   }
 
 
+  .choose-us__reasons-item--left .reasons,
+  .choose-us__reasons-item--right .reasons {
+    font-size: 1.375rem;
+  }
+  .choose-us__item-number.top-left,
+  .choose-us__item-number.top-right {
+    font-size: 3.375rem;
+  }
+  .choose-us .section__header {
+    margin-bottom: 40px;
+  }
+
 
   .description p,
   .how-we-work__items__paragraph,
@@ -1538,6 +1570,9 @@ section .wrapper {
   .wall-setup__checkbox label {
     margin-right: 24px;
   }
+  .choose-us__reasons:last-child {
+    margin-top: -24px;
+  }
 
   /* Заменить на классы */
   .section__header h1 img {
@@ -1617,10 +1652,13 @@ section .wrapper {
     width: 100%;
     padding: 48px 0;
     margin-bottom: -20px;
-    backdrop-filter: blur(1px);
   }
   .choose-us__item-number.top-right {
     left: 5%;
+  }
+  .choose-us__item-number.top-left,
+  .choose-us__item-number.top-right {
+    font-size: 3rem;
   }
 
   .how-we-work .section__header_first { margin-bottom: 4px; }
