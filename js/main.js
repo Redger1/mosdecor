@@ -147,11 +147,7 @@ function displayDescription(target) {
 
 // Calculate toddler
 function polzynok() {
-<<<<<<< HEAD
-	const square = '';
-=======
 	var square = '';
->>>>>>> calculator
 	console.log(window.innerWidth)
 	if (window.innerWidth >= 768) {
 		square = 'кв ';

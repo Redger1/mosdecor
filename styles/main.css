@@ -560,10 +560,6 @@ section .wrapper {
 .calculate__calculator {
   display: grid;
   padding: 40px;
-<<<<<<< HEAD
-  /*grid-template-rows: 1fr 1fr 1fr;*/
-=======
->>>>>>> calculator
   grid-template-columns: 1fr 1fr;
   width: max-content;
   grid-gap: 30px;
@@ -1248,11 +1244,8 @@ section .wrapper {
     text-align: left;
   }
 
-<<<<<<< HEAD
-=======
 
   .slider { height: 488px; }
->>>>>>> calculator
 
   .slider { height: 488px; }
   .section__header h1 img {
@@ -1291,7 +1284,6 @@ section .wrapper {
   }
 
 
-<<<<<<< HEAD
   .choose-us__reasons-item--right,
   .choose-us__reasons-item--left {
     position: relative;
@@ -1307,8 +1299,6 @@ section .wrapper {
     width: 70%;
   }
 
-=======
->>>>>>> calculator
   .section__header_second { font-size: 1.875rem; }
 
   .how-we-work .section__header_first { max-width: 100%; }
@@ -1424,12 +1414,6 @@ section .wrapper {
     font-size: 1.25rem;
     height: 54px;
   }
-<<<<<<< HEAD
-  /*.dropdown__button {
-    width: calc(100% - 20px);
-  }*/
-=======
->>>>>>> calculator
   .work-scope__square { display: none; }
   .wall-setup__checkbox { display: block; }
   .calculate__calculator .button { align-self: start; }
@@ -1438,7 +1422,6 @@ section .wrapper {
   }
 
 
-<<<<<<< HEAD
   .choose-us__reasons-item--left .reasons,
   .choose-us__reasons-item--right .reasons {
     font-size: 1.375rem;
@@ -1451,8 +1434,6 @@ section .wrapper {
     margin-bottom: 40px;
   }
 
-=======
->>>>>>> calculator
 
   .description p,
   .how-we-work__items__paragraph,
@@ -1568,12 +1549,9 @@ section .wrapper {
   .wall-setup__checkbox label {
     margin-right: 24px;
   }
-<<<<<<< HEAD
   .choose-us__reasons:last-child {
     margin-top: -24px;
   }
-=======
->>>>>>> calculator
 
   /* Заменить на классы */
   .section__header h1 img {
@@ -1653,21 +1631,14 @@ section .wrapper {
     width: 100%;
     padding: 48px 0;
     margin-bottom: -20px;
-<<<<<<< HEAD
-=======
-    backdrop-filter: blur(1px);
->>>>>>> calculator
   }
   .choose-us__item-number.top-right {
     left: 5%;
   }
-<<<<<<< HEAD
   .choose-us__item-number.top-left,
   .choose-us__item-number.top-right {
     font-size: 3rem;
   }
-=======
->>>>>>> calculator
 
   .how-we-work .section__header_first { margin-bottom: 4px; }
   .how-we-work__items { padding: 40px 0; }

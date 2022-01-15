@@ -1,6 +1,6 @@
-//"use strict"
+"use strict"
 
-/*document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() {
 	const form = document.querySelector('#form');
 	form.addEventListener('submit', formSend);
 
@@ -79,4 +79,4 @@
 	function phoneTest(input) {
 		return !/^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/.test(input.value);
 	}
-});*/
+});
