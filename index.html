@@ -34,9 +34,9 @@
 				</div>
 			</div>
 			<div class="header__title">
-				<p class="header__title--first-row">Ведущие<br>мастера</p>
+				<p class="header__title--first-row">Ведущие<br> мастера</p>
 				<p class="header__title--second-row">по декоративной <br> краске и штукатурке</p>
-				<button>Заказать звонок</button>
+				<button id="#popup" href="#popup" class="popup-link">Заказать звонок</button>
 			</div>
 		</div>
 	</header>
@@ -436,6 +436,28 @@
 			</div>
 		</div>
 	</footer>
+
+	<div id="popup" class="popup">
+		<div class="popup__body">
+			<div class="popup__content">
+				<div class="popup__header">Заказать звонок</div>
+				<div class="popup__close close__popup">
+					<img src="assets/popup_cross.svg">
+				</div>
+				<div class="popup__subheader">Оставьте номер и мы свяжемся с вами в течение <span>15 минут</span>.</div>
+				<form enctype="multipart/form-data" method="post" class="popup__form">
+					<p class="popup__form__header">Ваше имя*</p>
+					<input name="popup-name" class="popup__input" type="text" placeholder="Александр">
+
+					<p class="popup__form__header">Ваш номер телефона*</p>
+					<input name="popup-phone" class="popup__input" type="text" placeholder="+7 (999)–999–99–99">
+
+					<button type="submit" class="popup__form__button close__popup">Позвоните мне</button>
+				</form>
+			</div>
+		</div>
+	</div>
+
 	<script src="js/main.js"></script>
 	<script src="js/form.js"></script>
 	<script src="https://smtpjs.com/v3/smtp.js"></script>

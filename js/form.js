@@ -46,6 +46,44 @@ document.addEventListener('DOMContentLoaded', function() {
 	}
 
 
+	// ============== Для попапа ============== //
+	const popupForm = document.querySelector('.popup__form');
+	popupForm.addEventListener('submit', popupSend);
+
+	async function popupSend(e) {
+		e.preventDefault();
+
+		let error = formValidate(popupForm);
+
+		if (error === 0) {
+			popupForm.classList.add('_sending');
+			let popupName = document.querySelectorAll('[name="popup-name"]')[0].value;
+			let popupPhone = document.querySelectorAll('[name="popup-phone"]')[0].value;
+
+			Email.send({
+				Host : "smtp.elasticemail.com",
+				Username : "arnautartyom@gmail.com",
+				Password : "61349B556A0FADD7F4B81508BD3E50753E93",
+				To : 'arnautartyom@yandex.com',
+				From : "arnautartyom@gmail.com",
+				Subject : "Поступила новая заявка с MosDecor!",
+				Body : `<div style="color: #333333; font: 32px Montserrat, sans-serif; line-height: 120%; -webkit-text-size-adjust:none; display: block;">Поступила новая заявка с MosDecor!</div>
+				<br>
+				<br>
+				<div style="color: #333333; font: 20px Montserrat, sans-serif; line-height: 30px; -webkit-text-size-adjust:none; display: block;">Номер телефона: <b>${popupPhone}</b>
+				<br>
+				Имя: <b>${popupName}</b>
+				</div>`,
+			}).then(
+			message => alert("Сообщение отправлено")
+			);
+		} else {
+			alert('Заполните обязательные поля!');
+		}
+	}
+	// ============== ========== ============== //
+
+
 	function formValidate(form) {
 		let error = 0;
 		let formReq = document.querySelectorAll("._req");

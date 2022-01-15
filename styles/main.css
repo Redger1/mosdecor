@@ -135,7 +135,8 @@ button:focus {
 
 .section__header h1 img {
   margin: -10px 20px 0 20px;
-
+  border: 3px solid #292C26;
+  border-radius: 50%;
 }
 
 .section__header p {
@@ -677,7 +678,7 @@ section .wrapper {
 
 #toddler::-moz-range-thumb {
   cursor: pointer;
-  background: url('../assets/toddler_circle.png') 0 0 / 100% no-repeat;
+  background: url('../assets/toddler_circle.svg') 0 0 / 100% no-repeat;
   height: 40px;
   width: 40px;
   border: 0;
@@ -1081,7 +1082,103 @@ section .wrapper {
 }
 
 
+/*===================
+        Popups
+  ===================*/
+.popup {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, .7);
+  top: 0;
+  left: 0;
+  transition: all 0.6s ease;
 
+  visibility: hidden;
+  opacity: 0;
+}
+.popup.open {
+  visibility: visible;
+  opacity: 1;
+}
+.popup.open .popup__content {
+  opacity: 1;
+  transform: translate(0px, 0px);
+}
+.popup__body {
+  min-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.popup__content {
+  max-width: 802px;
+  background: #FFF;
+  border-radius: 17px;
+  padding: 40px;
+  position: relative;
+  transform: translate(0px, -100%);
+  opacity: 0;
+  transition: all 0.6s ease;
+}
+.popup__close {
+  position: absolute;
+  right: 40px;
+  top: 40px;
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+}
+.popup__header {
+  font-size: 4rem;
+  font-family: var(--main-font);
+  font-weight: normal;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  color: #292C26;
+  line-height: 1;
+}
+.popup__subheader {
+  font-size: 2.25rem;
+  font-weight: normal;
+  font-family: var(--other-fonts-bold);
+  margin-bottom: 80px;
+  color: #515048;
+  line-height: 1;
+}
+.popup__subheader span {
+  color: ;
+}
+.popup__form {
+  font-family: var(--other-fonts-bold);
+  font-size: 2.125rem;
+  font-weight: normal;
+  color: #292C26;
+}
+.popup__input {
+  width: 100%;
+  max-height: 68px;
+  padding: 22px;
+  margin-bottom: 40px;
+  font-size: 1.5rem;
+  font-family: var(--other-fonts-bold);
+  font-weight: normal;
+  border-radius: 8px;
+  border: 1px solid #292C26;
+}
+.popup__form__header { margin-bottom: 20px; }
+.popup__form__button {
+  width: 100%;
+  height: 80px;
+  font-family: var(--other-fonts);
+  font-size: 1.75rem;
+  font-weight: 900;
+  background: url('../assets/buttom_bg.png') 0 0 / 100% no-repeat;
+  border: 0;
+  border-radius: 8px;
+}
+/*=================== 
+  ===================*/
 
 @media screen and (max-width: 1440px) {
   .works .wrapper { padding: 0; }
@@ -1196,6 +1293,31 @@ section .wrapper {
   .menu__item {
     font-size: 4rem;
     padding: 37px 0;
+  }
+
+
+
+  .popup__content {
+    max-width: 560px;
+  }
+  .popup__header {
+    font-size: 3rem;
+    margin-bottom: 12px;
+  }
+  .popup__subheader {
+    font-size: 1.625rem;
+    margin-bottom: 40px;
+  }
+  .popup__form { font-size: 1.5rem; }
+  .popup__input {
+    max-height: 68px;
+    margin-bottom: 32px;
+  }
+  .popup__form__header { margin-bottom: 16px; }
+  .popup__form__button {
+    width: 100%;
+    height: 68px;
+    font-size: 1.5rem;
   }
 }
 
@@ -1655,6 +1777,37 @@ section .wrapper {
   .footer__contacts__items p {
     font-size: 1.25rem;
   }
+
+
+  .popup__content {
+    max-width: 420px;
+    padding: 30px;
+  }
+  .popup__header {
+    font-size: 2.25rem;
+    margin-bottom: 8px;
+  }
+  .popup__subheader {
+    font-size: 1.25rem;
+  }
+  .popup__form__header {
+    font-size: 1.125rem;
+    margin-bottom: 12px;
+  }
+  .popup__input {
+    height: 50px;
+    font-size: 1.125rem;
+    padding: 16px;
+    margin-bottom: 20px;
+  }
+  .popup__form__button {
+    height: 50px;
+    font-size: 1.125rem;
+  }
+  .popup__close {
+    top: 30px;
+    right: 30px;
+  }
 }
 
 @media (max-width: 450px) {
@@ -1664,6 +1817,18 @@ section .wrapper {
   .samples-label p {
     font-size: calc(100vw / 17 + 0.8vh);
   }
+
+
+  .popup__content {
+    max-width: 359px;
+    padding: 16px 12px;
+  }
+  .popup__close {
+    top: 16px;
+    right: 12px;
+  }
+  .popup__header { margin-bottom: 4px; }
+  .popup__subheader { margin-bottom: 32px; }
 }
 
 @media (min-width: 376px) {
