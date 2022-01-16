@@ -46,6 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		} else {
 			alert('Заполните обязательные поля!');
 		}
+		error = 0;
 	}
 
 
@@ -56,8 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	function popupSend(e) {
 		e.preventDefault();
 
-		// let error = formValidate(popupForm);
-		let error = 0;
+		let error = popupValidate(popupForm);
 		
 		if (error === 0) {
 			popupForm.classList.add('_sending');
@@ -87,9 +87,32 @@ document.addEventListener('DOMContentLoaded', function() {
 		} else {
 			alert('Заполните обязательные поля!');
 		}
+		error = 0;
 	}
 	// ============== ========== ============== //
 
+	function popupValidate(form) {
+		let error = 0;
+		let popupReq = document.querySelectorAll(".popup_req");
+
+		for (let index = 0; index < popupReq.length; index++) {
+			const input = popupReq[index];
+			formRemoveError(input);
+
+			if (input.classList.contains('popup__phone')) {
+				if (phoneTest(input)) {
+					console.log('telephone');
+					formAddError(input);
+					error++;
+				}
+			}
+			if (input.value === '') {
+				formAddError(input);
+				error++;
+			}
+		}
+		return error;
+	}
 
 	function formValidate(form) {
 		let error = 0;
