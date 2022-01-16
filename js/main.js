@@ -147,16 +147,10 @@ function displayDescription(target) {
 
 // Calculate toddler
 function polzynok() {
-	var square = '';
-	console.log(window.innerWidth)
-	if (window.innerWidth >= 768) {
-		square = 'кв ';
-	}
-	console.log(square);
 	var rng = document.getElementById('toddler');
 	var p = document.getElementById('toddler-result');
-	p.innerHTML = `${rng.value} ${square}м<sup>2</sup>`;
-	if (rng.value == '200') { p.innerHTML = `${rng.value}+ ${square}м<sup>2</sup>` }
+	p.innerHTML = `${rng.value} м<sup>2</sup>`;
+	if (rng.value == '200') { p.innerHTML = `${rng.value}+ м<sup>2</sup>` }
 }
 
 
@@ -250,7 +244,6 @@ function popupOpen(currentPopup) {
 
 function popupClose(popupActive, doUnlock = true) {
 	if (unlock) {
-		console.log(popupActive);
 		popupActive.classList.remove('open');
 		if (doUnlock) {
 			bodyUnlock();

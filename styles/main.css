@@ -1096,6 +1096,7 @@ section .wrapper {
 
   visibility: hidden;
   opacity: 0;
+  z-index: 10;
 }
 .popup.open {
   visibility: visible;
@@ -1454,7 +1455,7 @@ section .wrapper {
 }
 
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .how-we-work .wrapper,
   .wrapper {
     width: 94%;
@@ -1536,7 +1537,6 @@ section .wrapper {
     font-size: 1.25rem;
     height: 54px;
   }
-  .work-scope__square { display: none; }
   .wall-setup__checkbox { display: block; }
   .calculate__calculator .button { align-self: start; }
   .calculate__button {

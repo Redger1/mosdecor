@@ -38,7 +38,10 @@ document.addEventListener('DOMContentLoaded', function() {
 				Номер телефона: <a href="tel:${user_phone}"><b>${user_phone}</b></a>
 				</div>`,
 			}).then(
-			message => alert("Сообщение отправлено")
+			message => { 
+				alert("Сообщение отправлено");
+				form.classList.remove('_sending');
+			}
 			);
 		} else {
 			alert('Заполните обязательные поля!');
@@ -75,7 +78,10 @@ document.addEventListener('DOMContentLoaded', function() {
 				Имя: <b>${popupName}</b>
 				</div>`,
 			}).then(
-			message => alert("Сообщение отправлено")
+			message => { 
+				alert("Сообщение отправлено");
+				popupForm.classList.remove('_sending');
+			}
 			);
 		} else {
 			alert('Заполните обязательные поля!');
