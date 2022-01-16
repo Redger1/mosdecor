@@ -53,11 +53,12 @@ document.addEventListener('DOMContentLoaded', function() {
 	const popupForm = document.querySelector('.popup__form');
 	popupForm.addEventListener('submit', popupSend);
 
-	async function popupSend(e) {
+	function popupSend(e) {
 		e.preventDefault();
 
-		let error = formValidate(popupForm);
-
+		// let error = formValidate(popupForm);
+		let error = 0;
+		
 		if (error === 0) {
 			popupForm.classList.add('_sending');
 			let popupName = document.querySelectorAll('[name="popup-name"]')[0].value;
