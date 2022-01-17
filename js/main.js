@@ -32,9 +32,6 @@ const sliderTrackWidth = document.querySelector('.slider__track').offsetWidth
 const setSlidePosition = (slide, index) => {
 	slide.style.left = (sliderTrackWidth * 0.15) + (slideWidth + 30) * index + 'px';
 }
-// const setSlidePosition = (slide, index) => {
-// 	slide.style.left = (slideWidth + 30) * index + 'px';
-// }
 slides.forEach(setSlidePosition);
 
 // Function to move slides
