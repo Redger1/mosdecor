@@ -245,7 +245,6 @@ button:focus {
   font-family: var(--main-font-bold);
   font-size: 5rem;
   text-align: center;
-  text-transform: uppercase;
   border-bottom: 6px solid #fff;
   line-height: 1;
   padding: 50px 0;
@@ -1382,7 +1381,10 @@ section .wrapper {
     left: 64px;
   }
 
-  
+  .works .header__wrapper {
+    display: block;
+  }
+
   .video {
     width: 100%;
   }
@@ -1440,7 +1442,7 @@ section .wrapper {
   }
 
 
-  .footer h1 { font-size: 7.5rem; }
+  .footer h1 { font-size: 7rem; }
   .footer .wrapper { padding-top: 60px; }
   .footer__contacts { gap: 50px; }
   .footer_contacts__map { width: 60%; }
@@ -1577,38 +1579,35 @@ section .wrapper {
     font-size: 2.75rem;
   }
 
-  .footer h1 {
-    font-size: 5.5rem;
-  }
-  .footer__socials {
-    gap: 40px;
-  }
+  .footer__contacts { margin-top: 60px; }
+  .footer h1 { font-size: 5.5rem; }
+  .footer__socials { gap: 40px; }
+  -
   .footer__socials img {
     height: 48px;
     width: 48px;
   }
 
-  .footer__contacts__items {
-    margin-bottom: 50px;
-  }
-  .footer__contacts__items h2 {
-    font-size: 3.375rem;
-  }
+  .footer__contacts__items { margin-bottom: 50px; }
+  .footer__contacts__items h2 { font-size: 3.375rem; }
+
+  
+  .footer_contacts__map { height: 420px; }
+  .footer_contacts__map iframe { height: 100%; }
+
   .footer__contacts__items,
   .footer_contacts__map {
     width: 100%;
   }
-  .footer_contacts__map {
-    height: 420px;
-  }
-  .footer_contacts__map iframe {
-    height: 100%;
-  }
 
-
+  .menu__body {
+    padding-top: 25px;
+  }
   .menu__item {
     font-size: 3rem;
-    padding: 20px 0;
+    padding: 20px 0 20px 20px;
+    text-align: left;
+    border-bottom: 3px solid #fff;
   }
 }
 
@@ -1778,6 +1777,10 @@ section .wrapper {
     font-size: 1.25rem;
   }
 
+  .footer__socials img {
+    width: 50px;
+    height: 50px;
+  }
 
   .popup__content {
     max-width: 420px;
@@ -1807,6 +1810,13 @@ section .wrapper {
   .popup__close {
     top: 30px;
     right: 30px;
+  }
+
+  .menu__body {
+    padding-top: 30px;
+  }
+  .menu__item {
+    font-size: 2.3rem;
   }
 }
 

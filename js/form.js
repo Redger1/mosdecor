@@ -100,8 +100,7 @@ document.addEventListener('DOMContentLoaded', function() {
 			formRemoveError(input);
 
 			if (input.classList.contains('popup__phone')) {
-				if (phoneTest(input)) {
-					console.log('telephone');
+				if (phoneTest(input)) {tele
 					formAddError(input);
 					error++;
 				}

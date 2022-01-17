@@ -26,17 +26,20 @@ const slides = Array.from(track.children);
 const nextButton = document.querySelector('.slider__button--right');
 const prevButton = document.querySelector('.slider__button--left');
 const slideWidth = slides[0].getBoundingClientRect().width;
+const sliderTrackWidth = document.querySelector('.slider__track').offsetWidth
 
 // Arrange the slides
 const setSlidePosition = (slide, index) => {
-	slide.style.left = (slideWidth + 30) * index + 'px';
+	slide.style.left = (sliderTrackWidth * 0.15) + (slideWidth + 30) * index + 'px';
 }
+// const setSlidePosition = (slide, index) => {
+// 	slide.style.left = (slideWidth + 30) * index + 'px';
+// }
 slides.forEach(setSlidePosition);
 
 // Function to move slides
 const moveToSlide = (track, currentSlide, targetSlide) => {
-
-	track.style.transform = `translateX(-${parseInt(targetSlide.style.left)}px)`;
+	track.style.transform = `translateX(-${parseInt(targetSlide.style.left) - parseInt(sliderTrackWidth * 0.15)}px)`;
 	currentSlide.classList.remove('current-slide');
 	targetSlide.classList.add('current-slide');
 }
@@ -45,9 +48,6 @@ const moveToSlide = (track, currentSlide, targetSlide) => {
 prevButton.addEventListener('click', e => {
 	const currentSlide = document.querySelector('.current-slide');
 	const prevSlide = currentSlide.previousElementSibling;
-
-	//let tmp = 0;
-
 	moveToSlide(track, currentSlide, prevSlide);
 })
 
@@ -55,9 +55,6 @@ prevButton.addEventListener('click', e => {
 nextButton.addEventListener('click', e => {
 	const currentSlide = document.querySelector('.current-slide');
 	const nextSlide = currentSlide.nextElementSibling;
-
-	//let tmp = -200;
-
 	moveToSlide(track, currentSlide, nextSlide);
 })
 
