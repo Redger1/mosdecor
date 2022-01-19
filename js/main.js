@@ -112,26 +112,26 @@ for (let i = 0; i < avatarItem.length; i++) {
 
 function displayDescription(target) {
 	const id = target.id;
-	if (id == 'albert') {
+	if (id == 'pavel') {
 		for (let i = 0; i < descriptions.length; i++) {
 			descriptions[i].classList.remove('selected');
-			if (descriptions[i].classList == 'description__albert') {
+			if (descriptions[i].classList == 'description__pavel') {
 				descriptions[i].classList.add('selected');
 			}
 		}
 	}
-	if (id == 'victor') {
+	if (id == 'belov') {
 		for (let i = 0; i < descriptions.length; i++) {
 			descriptions[i].classList.remove('selected');
-			if (descriptions[i].classList == 'description__victor') {
+			if (descriptions[i].classList == 'description__belov') {
 				descriptions[i].classList.add('selected');
 			}
 		}
 	}
-	if (id == 'eduard') {
+	if (id == 'igor') {
 		for (let i = 0; i < descriptions.length; i++) {
 			descriptions[i].classList.remove('selected');
-			if (descriptions[i].classList == 'description__eduard') {
+			if (descriptions[i].classList == 'description__igor') {
 				descriptions[i].classList.add('selected');
 			}
 		}

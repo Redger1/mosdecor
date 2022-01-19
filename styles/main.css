@@ -230,6 +230,7 @@ button:focus {
 }
 .blur {
   backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, .5);
   -webkit-backdrop-filter: blur(10px);
   -moz-backdrop-filter: blur(10px);
   height: 100%;
@@ -854,9 +855,9 @@ section .wrapper {
 }
 
 
-.description__albert,
-.description__eduard,
-.description__victor {
+.description__pavel,
+.description__igor,
+.description__belov {
   display: none;
 }
 .description .selected {
@@ -1093,7 +1094,7 @@ section .wrapper {
 
   visibility: hidden;
   opacity: 0;
-  z-index: 10;
+  z-index: 20;
 }
 .popup.open {
   visibility: visible;
@@ -1143,9 +1144,6 @@ section .wrapper {
   margin-bottom: 80px;
   color: #515048;
   line-height: 1;
-}
-.popup__subheader span {
-  color: ;
 }
 .popup__form {
   font-family: var(--other-fonts-bold);
@@ -1254,6 +1252,7 @@ section .wrapper {
   .avatar__item {
     width: 146px;
     height: 146px;
+    object-fit: cover;
   }
 
   .description__albert p,
@@ -1580,7 +1579,6 @@ section .wrapper {
   .footer__contacts { margin-top: 60px; }
   .footer h1 { font-size: 5.5rem; }
   .footer__socials { gap: 40px; }
-  -
   .footer__socials img {
     height: 48px;
     width: 48px;
@@ -1598,7 +1596,7 @@ section .wrapper {
     width: 100%;
   }
 
-  .menu__body {
+  .blur {
     padding-top: 25px;
   }
   .menu__item {
@@ -1810,7 +1808,7 @@ section .wrapper {
     right: 30px;
   }
 
-  .menu__body {
+  .blur {
     padding-top: 30px;
   }
   .menu__item {
