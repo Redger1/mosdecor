@@ -884,9 +884,11 @@ section .wrapper {
 }
 
 .video {
-  width: 50%;
+  margin-top: 100px;
+  width: 100%;
 }
 .video video {
+  height: 920px;
   object-fit: cover;
   border-radius: 8px;
   width: 100%;
@@ -948,7 +950,7 @@ section .wrapper {
 /*==========NEW SLIDER TEST========*/
 
 .slider_wrapper{
-  margin-top: 100px;
+  margin-top: 80px;
   position: relative;
 }
 
