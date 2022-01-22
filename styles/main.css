@@ -550,6 +550,55 @@ section .wrapper {
 .slider__button--left {
   left: -40px;
 }
+
+/*======TEST SLIDER=========*/
+
+.works__sliderWrapper{
+  position: relative;
+  margin-top: 100px;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+}
+
+.works__swiper{
+  height: 100%;
+  width: 74.65%;
+  cursor: grab;
+}
+
+.works__swiper__swiper-slide{
+  width: 1220px;
+}
+
+.works__swiper-button-prev{
+  position: absolute;
+  top: 50%;
+  margin-top: calc(0px - (var(--swiper-navigation-size)/ 2));
+  z-index: 10;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  left: -34px;
+}
+
+.works__swiper-button-next{
+  position: absolute;
+  top: 50%;
+  margin-top: calc(0px - (var(--swiper-navigation-size)/ 2));
+  z-index: 10;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  right: -34px;
+}
+
+/*======TEST SLIDER=========*/
+
 /*===================   
   ===================*/
 
