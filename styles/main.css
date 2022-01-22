@@ -375,6 +375,7 @@ section .wrapper {
 .header__wrapper {
   display: flex;
   flex-direction: column;
+  z-index: 5;
 }
 
 
@@ -595,6 +596,24 @@ section .wrapper {
   justify-content: center;
 
   right: -34px;
+}
+
+/*---------mobileTouchSlider--------*/
+
+.works__touchSlider{
+  display: none;
+  overflow: hidden;
+  overflow-x: scroll;
+  margin-top: 100px;
+  height: 60vh;
+  max-height: 480px;
+  min-height: 380px;
+}
+
+.works__touchSlider__slide{
+  min-width: 75vw;
+  margin-right: 30px;
+  cursor: grab;
 }
 
 /*======TEST SLIDER=========*/
@@ -1306,7 +1325,7 @@ section .wrapper {
 /*=================== 
   ===================*/
 
-@media screen and (max-width: 1440px) {
+@media screen and (max-width: 1439px) {
   .works .wrapper { padding: 0; }
   .choose-us .wrapper { padding-top: 50px; }
   .how-we-work .wrapper { padding-bottom: 20px; }
@@ -1349,6 +1368,13 @@ section .wrapper {
     padding-top: 10px;
   }
 
+  .works__sliderWrapper{
+    display: none;
+  }
+
+  .works__touchSlider{
+    display: flex;
+  }
 
   .header__title button {
     padding-top: 15px;
@@ -1947,6 +1973,9 @@ section .wrapper {
 }
 
 @media (max-width: 450px) {
+  .header .wrapper{ 
+    height: 100vh;
+  }
   .samples__body--scroll-item {
     width: 80%;
   }
