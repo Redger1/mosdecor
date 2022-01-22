@@ -4,6 +4,8 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="styles/main.css">
+	<link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+	<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 	<title>Document</title>
 </head>
@@ -326,6 +328,77 @@
 		</div>
 	</section>
 
+	<section class="masters_desktop">
+		<div class="wrapper">
+			<header class="section__header">
+				<div class="header_wrapper">
+					<h1 class="section__header_first masters__header"> 
+						Мастера <img src="assets/sample2.png" height="64" width="64"> декоративной
+					</h1>
+					<h1 class="section__header_first">
+						краски и штукатурки
+					</h1>
+				</div>
+			</header>
+			<div class="slider_wrapper">
+				<div class="swiper">
+					<!-- Additional required wrapper -->
+					<div class="swiper-wrapper">
+					  <!-- Slides -->
+					  <div class="masters_desktop__swiper-slide swiper-slide">
+						<img id="belov" class="slide__avatar unselectable" src="assets/masters/belov.jpg">
+						<h1 class="slide__name">Кирилл Белов</h1>
+						<p class="slide__p unselectable"> 
+							Мастер по декоративной штукатурке - это почти как художник. И при ручном, и при механизированном нанесении итоговая фактура зависит от движений руки мастера. Иногда по рисунку можно узнать мастера, который выполнял работу. Очень важно сохранять в себе творческое начало и чтобы оно не притуплялось на большом количестве заказов. 
+						</p>
+					  </div>
+					  <div class="masters_desktop__swiper-slide swiper-slide">
+						<img id="chernev" class="slide__avatar unselectable" src="assets/masters/chernev.jpg">
+						<h1 class="slide__name">Павел Чернев</h1>
+						<p class="slide__p unselectable"> 
+							Я работаю мастером по декоративной штукатурке всю свою жизнь. Успел поучаствовать и в маленьких проектах - 20 кв.с. художественный росписи, и в больших - 14 000 кв.м. декоративной штукатурки шелк в элитном жилом комплексе. В нашей работе важна высокая концентрация и отсутствие спешки. 
+						</p>
+					  </div>
+					  <div class="masters_desktop__swiper-slide swiper-slide">
+						<img id="makoven" class="slide__avatar unselectable" src="assets/masters/makoven.jpg">
+						<h1 class="slide__name">Игорь Маковень</h1>
+						<p class="slide__p unselectable"> 
+							Для меня работа мастером по декоративной штукатурке это прежде всего творчество. Всегда стараюсь брать самые сложные и необычные проекты на выполнение. Мне интересно воплощать идеи заказчиков в жизнь, проводить совместную творческую работу и вкладывать частичку себя.
+						</p>
+					  </div>
+					  <div class="masters_desktop__swiper-slide swiper-slide">
+						<img id="semenov" class="slide__avatar unselectable" src="assets/masters/semenov.jpg">
+						<h1 class="slide__name">Кирилл Семёнов</h1>
+						<p class="slide__p unselectable"> 
+							Что я могу сказать о свой работа? Вы знаете, мы вместе сдали уже больше 70 объектов, и это действительно много, как отдельная часть моей жизни и карьеры, сложно рассказать об этом коротко. Но я могу сказать одно, треть наших заказчиков обращаются к нам по рекомендации. И мне приятно работать в команде профессионалов.
+						</p>
+					  </div>
+					  <div class="masters_desktop__swiper-slide swiper-slide">
+						<img id="kiselev" class="slide__avatar unselectable" src="assets/masters/kiselev.jpg">
+						<h1 class="slide__name">Никита Киселёв</h1>
+						<p class="slide__p unselectable"> 
+							Популярность декоративной штукатурки набирает обороты в современном дизайне помещений. Я думаю, что мастер по нанесению декоративной штукатурке должен обладаете не только навыками правильного нанесения, но и высокой визуальной культурой. Чувство вкуса нужно развивать и тренировать, чтобы создавать самые красивые поверхности.
+						</p>
+					  </div>
+					  <div class="masters_desktop__swiper-slide swiper-slide">
+						<img id="rasputkov" class="slide__avatar unselectable" src="assets/masters/rasputkov.jpg">
+						<h1 class="slide__name">Алексей Распутков</h1>
+						<p class="slide__p unselectable"> 
+							Современные технологии декоративных штукатурок позволяют создавать всё новые и новые фактуры. Мне нравится развиваться с Мастерами Декора и улучшать свои навыки с каждым проектом. В нашей мастерской мы можем создать вам любую фактуру, по вашим фантазиям или по фотографии. 
+						</p>
+					  </div>
+					</div>
+				  </div>
+				<div class="swiper-button-prev" style="width: 68px; height: 68px;">
+					<img src="assets/slider/slider_arrow_left.svg">
+				</div>
+				<div class="swiper-button-next" style="width: 68px; height: 68px;">
+					<img src="assets/slider/slider_arrow_right.svg">
+				</div>
+			</div>
+		</div>
+	</section>
+
 	<section class="choose-us">
 		<div class="wrapper">
 			<header class="section__header">
@@ -476,6 +549,7 @@
 
 	<script src="js/main.js"></script>
 	<script src="js/form.js"></script>
+	<script src="js/slider.js"></script>
 	<script src="https://smtpjs.com/v3/smtp.js"></script>
 </body>
 </html>
