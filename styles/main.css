@@ -126,7 +126,7 @@ button:focus {
 	--main-font: 'CimeroPro';
   --main-font-bold: 'CimeroPro';
   --other-fonts: 'Montserrat';
-  --other-fonts-bold: 'OpenSans';
+  --other-fonts-bold: 'Montserrat';
 }
 
 /* Repetitive */
@@ -1281,7 +1281,7 @@ section .wrapper {
 /*=================== 
   ===================*/
 
-@media screen and (max-width: 1439px) {
+@media screen and (max-width: 1440px) {
   .works .wrapper { padding: 0; }
   .choose-us .wrapper { padding-top: 50px; }
   .how-we-work .wrapper { padding-bottom: 20px; }
