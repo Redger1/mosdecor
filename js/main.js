@@ -10,10 +10,32 @@ samplesArray.forEach((item, index, arr) => {
 		}
 		e.target.classList.add('_selected');
 		for (let j = 0; j < samplesBgMasks.length; j++) {
-			samplesBgMasks[j].style.display = 'none';
-			if (e.target.dataset.value == samplesBgMasks[j].dataset.value) {
-				samplesBgMasks[j].style.display = 'block';
+			
+			
+			if (samplesBgMasks[j].dataset.value != e.target.dataset.value){
+
+				anime({
+					targets: samplesBgMasks[j],
+					easing: 'easeOutExpo',
+					opacity: [1, 0]
+				})
 			}
+			setTimeout(()=>{samplesBgMasks[j].style.display = 'none';}, 249)
+			
+			
+			setTimeout(()=>{
+				if (e.target.dataset.value == samplesBgMasks[j].dataset.value) {
+				// samplesBgMasks[j].style.display = 'block';
+				// console.log(samplesBgMasks[j])
+				anime({
+					targets: samplesBgMasks[j],
+					easing: 'easeInQuad',
+					opacity: [0, 1]
+				})
+				samplesBgMasks[j].style.display = 'block';
+				}
+			}, 250);
+			
 		}
 	})
 });
