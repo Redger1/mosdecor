@@ -19,43 +19,6 @@ samplesArray.forEach((item, index, arr) => {
 });
 
 
-
-// Slider
-const track = document.querySelector('.slider__track');
-const slides = Array.from(track.children);
-const nextButton = document.querySelector('.slider__button--right');
-const prevButton = document.querySelector('.slider__button--left');
-const slideWidth = slides[0].getBoundingClientRect().width;
-const sliderTrackWidth = document.querySelector('.slider__track').offsetWidth
-
-// Arrange the slides
-const setSlidePosition = (slide, index) => {
-	slide.style.left = (sliderTrackWidth * 0.15) + (slideWidth + 30) * index + 'px';
-}
-slides.forEach(setSlidePosition);
-
-// Function to move slides
-const moveToSlide = (track, currentSlide, targetSlide) => {
-	track.style.transform = `translateX(-${parseInt(targetSlide.style.left) - parseInt(sliderTrackWidth * 0.15)}px)`;
-	currentSlide.classList.remove('current-slide');
-	targetSlide.classList.add('current-slide');
-}
-
-// Move to the left
-prevButton.addEventListener('click', e => {
-	const currentSlide = document.querySelector('.current-slide');
-	const prevSlide = currentSlide.previousElementSibling;
-	moveToSlide(track, currentSlide, prevSlide);
-})
-
-// Move to the right
-nextButton.addEventListener('click', e => {
-	const currentSlide = document.querySelector('.current-slide');
-	const nextSlide = currentSlide.nextElementSibling;
-	moveToSlide(track, currentSlide, nextSlide);
-})
-
-
 // Dropdown menu from calculator
 document.querySelectorAll('.dropdown').forEach(function (dropdownWrapper) {
 	const dropdownBtn = dropdownWrapper.querySelector('.dropdown__button');
@@ -82,61 +45,6 @@ document.querySelectorAll('.dropdown').forEach(function (dropdownWrapper) {
 		}
 	})
 })
-
-document.querySelector('.calculate__button').addEventListener('click', e => {
-
-})
-
-
-// Переключение аватарок
-const avatarContainer = document.querySelector('.avatar');
-const descriptions = document.querySelector('.description').children;
-const avatarItem = document.querySelectorAll('.avatar__item');
-for (let i = 0; i < avatarItem.length; i++) {
-	avatarItem[i].addEventListener('click', function(e) {
-
-		displayDescription(e.target)
-
-		e.target.remove();
-		
-		for (let j = 0; j < avatarItem.length; j++) {
-			avatarItem[j].classList.remove('_selected');
-		}
-
-		e.target.classList.add('_selected');
-
-		const newAvatarItem = document.querySelectorAll('.avatar__item');
-		avatarContainer.insertBefore(e.target, newAvatarItem[0]);
-	})
-}
-
-function displayDescription(target) {
-	const id = target.id;
-	if (id == 'pavel') {
-		for (let i = 0; i < descriptions.length; i++) {
-			descriptions[i].classList.remove('selected');
-			if (descriptions[i].classList == 'description__pavel') {
-				descriptions[i].classList.add('selected');
-			}
-		}
-	}
-	if (id == 'belov') {
-		for (let i = 0; i < descriptions.length; i++) {
-			descriptions[i].classList.remove('selected');
-			if (descriptions[i].classList == 'description__belov') {
-				descriptions[i].classList.add('selected');
-			}
-		}
-	}
-	if (id == 'igor') {
-		for (let i = 0; i < descriptions.length; i++) {
-			descriptions[i].classList.remove('selected');
-			if (descriptions[i].classList == 'description__igor') {
-				descriptions[i].classList.add('selected');
-			}
-		}
-	}
-}
 
 
 // Calculate toddler
@@ -305,3 +213,25 @@ document.addEventListener('keydown', function(e) {
 			Element.prototype.msMatchesSelector;
 	};
 })();
+
+
+// Динамическая высота для карточек мастеров
+if (window.innerWidth > 1024) {
+	const masterSlides = Array.from(document.querySelectorAll('.swiper-slide'));
+	let maxHeight = 0;
+	masterSlides.forEach((item, index, arr) => {
+		if (item.getClientRects()[0].height >= maxHeight) maxHeight = item.getClientRects()[0].height;
+	});
+	masterSlides.forEach((item, index, arr) => {
+		item.style.height = maxHeight + 'px';
+	})
+} else {
+	const masterSlidesMobile = Array.from(document.querySelectorAll('.swiper-slide--mobile'));
+	let maxHeightMobile = 0;
+	masterSlidesMobile.forEach((item, index, arr) => {
+		if (item.getClientRects()[0].height >= maxHeightMobile) maxHeightMobile = item.getClientRects()[0].height;
+	});
+	masterSlidesMobile.forEach((item, index, arr) => {
+		item.style.height = maxHeightMobile + 'px';
+	})
+}

@@ -46,9 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		} else {
 			alert('Заполните обязательные поля!');
 		}
-		error = 0;
 	}
-
 
 	// ============== Для попапа ============== //
 	const popupForm = document.querySelector('.popup__form');
@@ -82,12 +80,12 @@ document.addEventListener('DOMContentLoaded', function() {
 			message => { 
 				alert("Сообщение отправлено");
 				popupForm.classList.remove('_sending');
+				popupForm.closest('.popup.open').classList.remove('open');
 			}
 			);
 		} else {
 			alert('Заполните обязательные поля!');
 		}
-		error = 0;
 	}
 	// ============== ========== ============== //
 
@@ -100,7 +98,7 @@ document.addEventListener('DOMContentLoaded', function() {
 			formRemoveError(input);
 
 			if (input.classList.contains('popup__phone')) {
-				if (phoneTest(input)) {tele
+				if (!phoneTest(input)) {
 					formAddError(input);
 					error++;
 				}
@@ -117,13 +115,12 @@ document.addEventListener('DOMContentLoaded', function() {
 		let error = 0;
 		let formReq = document.querySelectorAll("._req");
 
-
 		for (let index = 0; index < formReq.length; index++) {
 			const input = formReq[index];
 			formRemoveError(input);
 
 			if (input.classList.contains('_phone')) {
-				if (phoneTest(input)) {
+				if (!phoneTest(input)) {
 					formAddError(input);
 					error++;
 				}
@@ -145,6 +142,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	function phoneTest(input) {
 		var a = /^(\+7|7|8)?[\s\-]?\(?[489][0-9]{2}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}$/;
-		return !a.test(input.value);
+		return a.test(input.value);
 	}
 });
