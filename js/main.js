@@ -213,25 +213,3 @@ document.addEventListener('keydown', function(e) {
 			Element.prototype.msMatchesSelector;
 	};
 })();
-
-
-// Динамическая высота для карточек мастеров
-if (window.innerWidth > 1024) {
-	const masterSlides = Array.from(document.querySelectorAll('.swiper-slide'));
-	let maxHeight = 0;
-	masterSlides.forEach((item, index, arr) => {
-		if (item.getClientRects()[0].height >= maxHeight) maxHeight = item.getClientRects()[0].height;
-	});
-	masterSlides.forEach((item, index, arr) => {
-		item.style.height = maxHeight + 'px';
-	})
-} else {
-	const masterSlidesMobile = Array.from(document.querySelectorAll('.swiper-slide--mobile'));
-	let maxHeightMobile = 0;
-	masterSlidesMobile.forEach((item, index, arr) => {
-		if (item.getClientRects()[0].height >= maxHeightMobile) maxHeightMobile = item.getClientRects()[0].height;
-	});
-	masterSlidesMobile.forEach((item, index, arr) => {
-		item.style.height = maxHeightMobile + 'px';
-	})
-}
