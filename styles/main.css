@@ -403,13 +403,32 @@ section .wrapper {
 .samples .section__header_second {
   text-align: right;
 }
-#samples__backgorund-mask {
+/* #samples__backgorund-mask {
   position: absolute;
   top: 10%;
   left: 50%;
   transform: translate(-50%, 0);
   z-index: 1;
   display: none;
+} */
+#samples__backgorund-mask { 
+  top: 6%;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  object-fit: contain !important;
+}
+
+.samples__imgsWrapper {
+  position: absolute;
+  width: 60vw;
+  height: 80vh;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
 }
 
 .samples__body {  
@@ -433,7 +452,7 @@ section .wrapper {
   color: #292C26;
   font-size: 3.5rem;
   font-family: 'Montserrat-Medium';
-  line-height: 1;
+  line-height: 0;
   padding: 20px 48px;
   border: 2px solid #292C26;
   border-radius: 100px;
@@ -452,10 +471,6 @@ section .wrapper {
 .samples__body-item:hover {
   background: #292C26;
   color: #FFE8D6;
-}
-
-.samples__body-item._selected {
-  box-shadow: 0px 10px 10px #292C26;
 }
 
 .samples__body--scroll {
@@ -1333,13 +1348,6 @@ section .wrapper {
     left: -40px;
   }
 
-  .samples__imgsWrapper {
-    width: 80%;
-    position: absolute;
-    top: 20px;
-    left: 50%;
-    transform: translate(-50%, 0px);
-  }
   #samples__backgorund-mask {
     position: relative;
     transform: scale(.75);
@@ -1370,16 +1378,7 @@ section .wrapper {
     padding-top: 15px;
     padding-bottom: 15px;
   }
-
-<<<<<<< HEAD
-  #samples__backgorund-mask { 
-    top: 6%;
-    position: relative;
-    width: 100%;
-    height: 100%;
-  }
-=======
->>>>>>> 10442d4a71f383dd01434dbf5837bf8a628f3e6c
+  
   #calculate__image { height: 550px; }
 
   .calculate__calculator {
@@ -1401,15 +1400,6 @@ section .wrapper {
   .samples__body-item {
     height: 76px;
     font-size: 2.25rem;
-  }
-
-  .samples__imgsWrapper{
-    position: absolute;
-    width: 60vw;
-    height: 80vh;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
   }
 
   .how-we-work__items { margin-top: 40px; }
