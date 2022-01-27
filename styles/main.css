@@ -975,14 +975,6 @@ section .wrapper {
     height: 160px;
   }
 }
-@media (max-width: 768px) {
-  .slide__p {
-    font-size: 1.375rem;
-  }
-  .slide__name {
-    font-size: 3.25rem;
-  }
-}
 /*==========NEW SLIDER TEST========*/
 
 /*=================== 
@@ -1338,7 +1330,7 @@ section .wrapper {
   }
 
   .samples__imgsWrapper {
-    width: 80%;
+    width: 100%;
     position: absolute;
     top: 20px;
     left: 50%;
@@ -1346,11 +1338,10 @@ section .wrapper {
   }
   #samples__backgorund-mask {
     position: relative;
-    transform: scale(.75);
+    transform: scale(.75) translate(-50%, 0);
     z-index: 1;
     display: none;
-    object-fit: cover;
-    left: 0;
+    left: 50%;
   }
 
   .section__header h1 img {
@@ -1460,6 +1451,7 @@ section .wrapper {
   .works .wrapper { padding-top: 20px; }
   .header .wrapper { height: 85vh; }
   .samples .wrapper { padding-top: 50px; }
+  section .wrapper { padding: 80px 0; }
 
   .header__contact { font-size: 1.5rem; }
   .header__contact a::before {
@@ -1475,7 +1467,6 @@ section .wrapper {
   .section__header_second br {
     display: none !important;
   }  
-
   .samples .section__header_second { text-align: left; }
   .samples__body--scroll { display: flex; }
 
@@ -1507,6 +1498,9 @@ section .wrapper {
 
   .works .header__wrapper {
     display: block;
+  }
+  .works__touchSlider {
+    margin-top: 40px;
   }
 
   .video video { height: 530px; }
@@ -1661,6 +1655,27 @@ section .wrapper {
   }
 
 
+  .slide__p {
+    font-size: 1.2rem;
+  }
+  .slide__name {
+    font-size: 2.5rem;
+    margin-top: 10px;
+  }
+  .slide__avatar {
+    height: 100px;
+    width: 100px;
+  }
+  .masters_desktop__swiper-slide {
+    min-width: 85%;
+    margin-right: 40px;
+    padding: 15px !important;
+  }
+  .masters_desktop__swiper-slide:last-child {
+    margin-right: 0;
+  }
+
+
   .choose-us__reasons-item--left .reasons,
   .choose-us__reasons-item--right .reasons {
     font-size: 1.375rem;
@@ -1672,15 +1687,6 @@ section .wrapper {
   }
   .choose-us .section__header {
     margin-bottom: 40px;
-  }
-
-  .masters_desktop__swiper-slide {
-    min-width: 85%;
-    margin-right: 40px;
-    padding: 30px !important;
-  }
-  .masters_desktop__swiper-slide:last-child {
-    margin-right: 0;
   }
 
   .description p,
@@ -1789,7 +1795,7 @@ section .wrapper {
   .choose-us__reasons { margin-bottom: 0; }
 
   .choose-us .section__header {
-    width: 70%;
+    width: 80%;
     margin: 0 auto;
     margin-bottom: 40px;
   }
