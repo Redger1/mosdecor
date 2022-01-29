@@ -406,7 +406,7 @@ section .wrapper {
 #samples__backgorund-mask {
   position: absolute;
   top: 10%;
-  left: 50%;
+  left: 60%;
   transform: translate(-50%, 0);
   z-index: 1;
   display: none;
@@ -459,9 +459,9 @@ section .wrapper {
   color: #FFE8D6;
 }
 
-.samples__body-item._selected {
+/* .samples__body-item._selected {
   box-shadow: 0px 10px 10px #292C26;
-}
+} */
 
 .samples__body--scroll {
   display: none;
@@ -1354,7 +1354,7 @@ section .wrapper {
     transform: scale(.75) translate(-50%, 0);
     z-index: 1;
     display: none;
-    left: 50%;
+    left: 60%;
   }
 
   .section__header h1 img {
