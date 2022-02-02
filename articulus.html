@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="styles/main.css">
+	<link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+	<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<title>Document</title>
+</head>
+<body>
+	<header class="other__header">
+		<div class="wrapper">
+			<div class="wrapper__top-nav">
+				<div class="header__menu">
+					<div class="menu__burger">
+						<span></span>
+					</div>
+					<div class="menu__body">
+						<div class="blur">
+						<ul class="menu__list">
+							<li class="menu__item"><a href="index.html" class="menu__link">Главная</a></li>
+							<li class="menu__item"><a data-goto=".articulus" href="#" class="menu__link">Образцы покрытия</a></li>
+							<li class="menu__item"><a data-goto=".calculate" href="#" class="menu__link">Стоимость работ</a></li>
+							<li class="menu__item"><a data-goto=".choose-us" href="#" class="menu__link">Почему нас выбирают</a></li>
+							<li class="menu__item"><a data-goto=".how-we-work" href="#" class="menu__link">Как мы работаем</a></li>
+						</ul>
+						</div>
+					</div>
+				</div>
+				<div class="header__logo">
+					<a href="index.html"><img src="assets/header/articulus_header_logo.svg"></a>
+				</div>
+				<div class="header__contact">
+					<a href="tel:79099999999">7(999)-999-99-98</a>
+				</div>
+			</div>
+		</div>
+	</header>
+	<section class="articulus">
+		<div class="wrapper">
+			<h1 class="articulus__header">Галерея образцов наших покрытий</h1>
+			
+			<div class="articulus__container">
+				<button class="articulus__item">Веницианские</button>
+				<button class="articulus__item">Песчанные</button>
+				<button class="articulus__item">Рельефные</button>
+				<button class="articulus__item">Перламутровые</button>
+				<button class="articulus__item">Бумажные</button>
+				<button class="articulus__item">Микроцемент</button>
+				<button class="articulus__item">Шелковые</button>
+				<button class="articulus__item">Бетон</button>
+				<button class="articulus__item">Фреска</button>
+			</div>
+			<div class="dropdown">
+				<button type="button" class="dropdown__button">Веницианские</button>
+				<ul class="dropdown__list">
+					<li class="dropdown__list-item">Веницианские</li>
+					<li class="dropdown__list-item">Песчанные</li>
+					<li class="dropdown__list-item">Рельефные</li>
+					<li class="dropdown__list-item">Перламутровые</li>
+					<li class="dropdown__list-item">Бумажные</li>
+					<li class="dropdown__list-item">Микроцемент</li>
+					<li class="dropdown__list-item">Шелковые</li>
+					<li class="dropdown__list-item">Бетон</li>
+					<li class="dropdown__list-item">Фреска</li>
+				</ul>
+				<input type="text" name="articul" class="dropdown__input-hidden">
+			</div>
+			<div class="articulus__grid">
+				<div class="articulus__grid__preview first">
+					<p>арт. ф4071</p>
+				</div>
+				<div class="articulus__grid__preview second">
+					<p>Арт. ф4071</p>
+				</div>
+				<div class="articulus__grid__preview third">
+					<p>Арт. ф4071</p>
+				</div>
+				<div class="articulus__grid__preview fourth">
+					<p>Арт. ф4071</p>
+				</div>
+				<div class="articulus__grid__preview fifth">
+					<p>Арт. ф4071</p>
+				</div>
+				<div class="articulus__grid__preview sixth">
+					<p>Арт. ф4071</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="calculate">
+		<div class="wrapper">
+			<h1 class="section__header_first">Расчитайте стоимость работ</h1>
+			<p class="section__header_second">Учтем ваш выбор, перезвоним и предоставим актуальную стоимость.</p>
+			<div class="calculate__wrapper">
+			<img id="calculate__image" src="assets/slider/slider2.png" height="660" width="1357" alt="">
+				<form enctype="multipart/form-data" method="post" class="calculate__calculator" id="form">
+
+					<div class="room-type">
+						<p>Тип помещения</p>
+						<div class="form-group">
+							<div class="dropdown">
+								<button type="button" class="dropdown__button">Квартира</button>
+								<ul class="dropdown__list">
+									<li class="dropdown__list-item" data-value="Квартира">Квартира</li>
+									<li class="dropdown__list-item" data-value="Дом">Дом</li>
+									<li class="dropdown__list-item" data-value="Нежилое помещение">Нежилое помещение</li>
+								</ul>
+								<input type="text" name="room-type" class="dropdown__input-hidden">
+							</div>
+						</div>
+					</div>
+					<div class="cover-type">
+						<p>Тип штукатурки</p>
+						<div class="form-group">
+							<div class="dropdown">
+								<button type="button" class="dropdown__button">Веницианская</button>
+								<ul class="dropdown__list">
+									<li class="dropdown__list-item" data-value="Веницианская">Веницианская</li>
+									<li class="dropdown__list-item" data-value="Песчанная">Песчанная</li>
+									<li class="dropdown__list-item" data-value="Шелковая">Шелковая</li>
+									<li class="dropdown__list-item" data-value="Перламутровая">Перламутровая</li>
+								</ul>
+								<input type="text" name="cover-type" class="dropdown__input-hidden">
+							</div>
+						</div>
+					</div>
+					
+					<div class="wall-setup">
+						<p>Подготовка стен</p>
+						<div class="wall-setup__checkbox">
+							<label for="done" class="radio">
+								<input name="complete" class="radio__input _req" value="Сделана" type="radio" id="done" checked>
+								<div class="radio__radio"></div>
+								Сделана
+							</label>
+							<label for="walls" class="radio">
+								<input name="complete" class="radio__input _req" value="Не сделана" type="radio" id="walls">
+								<div class="radio__radio"></div>
+								Не сделана
+							</label>
+						</div>
+					</div>
+				
+					<div class="work-scope">
+						<div class="work-scope__toddler">
+							<p>Объем работ</p>
+							<p id="toddler-result">100 м<sup>2</sup></p>
+						</div>
+						<div class="toddler-container">
+							<input name="user_area" id="toddler" type="range" min="0" max="200" step="50" oninput="polzynok()">		
+						</div>
+					</div>
+					<div class="phone">
+						<p>Ваш номер телефона*</p>
+						<input class="_phone _req" name="user_phone" placeholder="+7 (999)-999-99-99" type="tel">
+					</div>
+					<div class="button">
+						<button type="submit" class="calculate__button">Расчитать стоимость</button>
+					</div>
+
+				</form>
+			</div>
+		</div>
+	</section>
+
+	<section class="choose-us">
+		<div class="wrapper">
+			<header class="section__header">
+				<h1 class="section__header_first">Почему <img src="assets/samples/sample5.png" height="64" width="64"> нас</h1>
+				<h1 class="section__header_first">выбирают</h1>
+			</header>
+
+			<!-- First Row -->
+			<div class="choose-us__reasons">
+				<div class="choose-us__reasons-item--left">
+					<p class="reasons">
+						У нас работают только <span>высоко квалифицированные мастера</span> и на постоянной основе. Только так можно гарантировать качество проводимых работ.
+					</p>
+					<p class="choose-us__item-number top-left">01.</p>
+				</div>
+				<div class="choose-us__reasons-item--right">
+					<p class="reasons">
+						Максимально точная и подробная смета. <span>Без скрытых расходов и дополнительных платежей</span>. Вы не заплатите ни копейки больше, чем указано в смете.
+					</p>
+					<p class="choose-us__item-number top-right">02.</p>
+				</div>
+			</div>
+			<!-- _________ -->
+
+			<!-- Second Row -->
+			<div class="choose-us__reasons">
+				<div class="choose-us__reasons-item--left">
+					<p class="reasons">
+						В договоре мы прописываем <span>точные даты начала и окончания работ</span>. Вы можете быть уверены в том, что работа будет выполнена своевременно.
+					</p>
+					<p class="choose-us__item-number top-left">03.</p>
+				</div>
+				<div class="choose-us__reasons-item--right">
+					<p class="reasons">
+						Заранее <span>оплата</span> происходит за материал и 60% стоимости работ. Оставшаяся стоимость выплачивается <span>после итоговой сдачи объекта</span>.
+					</p>
+					<p class="choose-us__item-number top-right">04.</p>
+				</div>
+			</div>
+			<!-- __________ -->
+
+		</div>
+	</section>
+
+	<section class="how-we-work">
+		<div class="wrapper">
+			<header class="section__header">
+				<h1 class="section__header_first">Как мы <span><img src="assets/samples/sample6.png" height="64" width="64" alt=""></span> работаем</h1>
+			</header>
+			<p class="section__header_second">Основные этапы работ</p>
+			<div class="how-we-work__items">
+				<div class="how-we-work__items__header">
+					01. Перезваниваем по заявке
+				</div>
+				<div class="how-we-work__items__paragraph">
+					После того как вы оставите заявку у нас на сайте, наш оператор свяжется с вами в течение 15 минут.
+				</div>
+			</div>
+			<div class="how-we-work__items">
+				<div class="how-we-work__items__header">
+					02. Выезжаем на объект
+				</div>
+				<div class="how-we-work__items__paragraph">
+					Измерение точных размеров объекта, расчёт площади оштукатуривания, необходимого количество сырья, итоговой стоимости работ.
+				</div>
+			</div>
+			<div class="how-we-work__items">
+				<div class="how-we-work__items__header">
+					03. Выбираем материалы
+				</div>
+				<div class="how-we-work__items__paragraph">
+					При необходимости наши специалисты помогут вам с выбором материалов.
+				</div>
+			</div>
+			<div class="how-we-work__items">
+				<div class="how-we-work__items__header">
+					04. Составляем договор
+				</div>
+				<div class="how-we-work__items__paragraph">
+					Составляем и подписываем договор на оказание услуг с гарантией до 2 лет.
+				</div>
+			</div>
+			<div class="how-we-work__items">
+				<div class="how-we-work__items__header">
+					05. Сдача объекта
+				</div>
+				<div class="how-we-work__items__paragraph">
+					Прием и утверждение финальной работы мастера. Уборка помещения.
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<footer class="footer">
+		<div class="wrapper">
+			<h1>"master dec"</h1>
+			<div class="footer__socials">
+				<a class="social-links" href="https://instagram.com/tinta.moscow"><img src="assets/footer/inst.svg"></a>
+				<!--<a class="social-links" href="#"><img src="assets/footer/youtube.svg"></a>-->
+				<a class="social-links" href="https://vk.com/public210238218"><img src="assets/footer/vk.svg"></a>
+			</div>
+			<div class="footer__contacts">
+				<div class="footer__contacts__items">
+					<h2>Связаться с нами</h2>
+					<div class="contacts-item phone">
+						<img src="assets/footer/phone.svg">
+						<p>7 (999)-999-99-99</p>
+					</div>
+					<div class="contacts-item mail">
+						<img src="assets/footer/mail.svg">
+						<p>tinta-color@yandex.ru</p>
+					</div>
+					<div class="contacts-item address">
+						<img src="assets/footer/address.svg">
+						<p>Россия, Москва, Татьянин Парк, 12, корп. 6</p>
+					</div>
+				</div>
+				<div class="footer_contacts__map">
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2250.9048538677707!2d37.42045011641812!3d55.655863806931016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54df85b93e623%3A0xecec3c72072bfd1f!2z0YPQuy4g0KLQsNGC0YzRj9C90LjQvSDQn9Cw0YDQuiwgMTIsINCc0L7RgdC60LLQsCwgMTE5NjE4!5e0!3m2!1sru!2sru!4v1643126913357!5m2!1sru!2sru" width="400" height="300" allowfullscreen="" loading="lazy"></iframe>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<script src="https://smtpjs.com/v3/smtp.js"></script>
+	<script src="js/articulus.js"></script>
+</body>
+</html>
