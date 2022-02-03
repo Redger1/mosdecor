@@ -462,7 +462,7 @@ section .wrapper {
   position: relative;
   border-radius: 8px;
 }
-.articulus__grid__preview p {
+.articulus__grid__number {
   font-size: 2rem;
   font-family: var(--other-fonts-bold);
   font-weight: 600;
@@ -477,22 +477,10 @@ section .wrapper {
   backdrop-filter: blur(6px);
   padding: 25px 0;
 }
-
-
-.articulus__grid .first { background: url('../assets/articulus/first.png'); }
-.articulus__grid .second { background: url('../assets/articulus/second.png'); }
-.articulus__grid .third { background: url('../assets/articulus/third.png'); }
-.articulus__grid .fourth { background: url('../assets/articulus/fourth.png'); }
-.articulus__grid .fifth { background: url('../assets/articulus/fifth.png'); }
-.articulus__grid .sixth { background: url('../assets/articulus/sixth.png'); }
-
-.articulus__grid .first,
-.articulus__grid .second,
-.articulus__grid .third,
-.articulus__grid .fourth,
-.articulus__grid .fifth,
-.articulus__grid .sixth {
-  background-size: cover;
+.articulus__grid__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .articulus .dropdown { display: none; }
@@ -1771,7 +1759,7 @@ section .wrapper {
   .articulus__header { font-size: 5rem; }
   .articulus__grid { margin-top: 80px; }
   .articulus__grid__preview { height: 420px; }
-  .articulus__grid__preview p {
+  .articulus__grid__number {
     font-size: 1.75rem;
     padding: 18px 0;
   }
@@ -1916,7 +1904,7 @@ section .wrapper {
   .articulus .dropdown { display: block; }
   .https://www.figma.com/file/teZOzXHesjRP8CVqCwhgox/ECT-MOODBOARD?node-id=0%3A1 { grid-gap: 20px; }
   .articulus__grid__preview { height: 360px; }
-  .articulus__grid__preview p { font-size: 1.5rem; }
+  .articulus__grid__number { font-size: 1.5rem; }
   
 
   .header__title--second-row { margin-bottom: 40px; }
